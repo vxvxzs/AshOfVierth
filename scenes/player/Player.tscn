@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_player"]
+[ext_resource type="Script" path="res://scripts/player/components/player_movement.gd" id="2_movement"]
+[ext_resource type="Script" path="res://scripts/player/components/player_combat.gd" id="3_combat"]
+[ext_resource type="Script" path="res://scripts/player/components/player_abilities.gd" id="4_abilities"]
+[ext_resource type="Script" path="res://scripts/player/components/player_health.gd" id="5_health"]
+
+[sub_resource type="CircleShape2D" id="CircleShape_player"]
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape_attack"]
+radius = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape_hurtbox"]
+radius = 20.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape_player")
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("2_movement")
+
+[node name="Combat" type="Node" parent="."]
+script = ExtResource("3_combat")
+
+[node name="Abilities" type="Node" parent="."]
+script = ExtResource("4_abilities")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("5_health")
+
+[node name="AttackHitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+shape = SubResource("CircleShape_attack")
+disabled = true
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+monitorable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape_hurtbox")

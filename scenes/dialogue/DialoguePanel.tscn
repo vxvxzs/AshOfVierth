@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_panel.gd" id="1_dialogue"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_dialogue"]
+bg_color = Color(0.035, 0.055, 0.085, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.42, 0.86, 0.88, 0.92)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 26.0
+content_margin_top = 20.0
+content_margin_right = 26.0
+content_margin_bottom = 18.0
+
+[node name="DialoguePanel" type="CanvasLayer" groups=["dialogue_panel"]]
+layer = 10
+script = ExtResource("1_dialogue")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.015, 0.025, 0.05, 0.66)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = -230.0
+offset_right = -120.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+theme_override_styles/panel = SubResource("StyleBox_dialogue")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+theme_override_constants/separation = 10
+
+[node name="SpeakerLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+theme_override_colors/font_color = Color(0.62, 0.95, 0.95, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="BodyLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+autowrap_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.96, 1, 1)
+theme_override_font_sizes/font_size = 22
+
+[node name="ContinueLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+horizontal_alignment = 2
+theme_override_colors/font_color = Color(0.55, 0.75, 0.79, 1)
+theme_override_font_sizes/font_size = 15

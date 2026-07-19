@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/test_arena.gd" id="1_arena"]
+[ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/BrittleEcho.tscn" id="3_echo"]
+[ext_resource type="PackedScene" path="res://scenes/ui/TestHUD.tscn" id="4_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/SkillPanel.tscn" id="5_skill_panel"]
+[ext_resource type="PackedScene" path="res://scenes/world/MemoryShrine.tscn" id="6_shrine"]
+[ext_resource type="PackedScene" path="res://scenes/world/WorldCheckpoint.tscn" id="7_checkpoint"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/Spirit.tscn" id="8_spirit"]
+[ext_resource type="PackedScene" path="res://scenes/dialogue/DialoguePanel.tscn" id="9_dialogue"]
+[ext_resource type="PackedScene" path="res://scenes/ui/MobileControls.tscn" id="10_mobile_controls"]
+
+[node name="TestArena" type="Node2D"]
+script = ExtResource("1_arena")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(640, 312)
+
+[node name="AshWell" parent="." instance=ExtResource("7_checkpoint")]
+position = Vector2(640, 360)
+
+[node name="Spirit" parent="." instance=ExtResource("8_spirit")]
+position = Vector2(1030, 440)
+
+[node name="EchoSpawn1" type="Marker2D" parent="."]
+position = Vector2(400, 250)
+
+[node name="EchoSpawn2" type="Marker2D" parent="."]
+position = Vector2(720, 220)
+
+[node name="EchoSpawn3" type="Marker2D" parent="."]
+position = Vector2(930, 350)
+
+[node name="EchoSpawn4" type="Marker2D" parent="."]
+position = Vector2(380, 480)
+
+[node name="EchoSpawn5" type="Marker2D" parent="."]
+position = Vector2(780, 510)
+
+[node name="MemoryShrine" parent="." instance=ExtResource("6_shrine")]
+position = Vector2(1080, 140)
+
+[node name="TestHUD" parent="." instance=ExtResource("4_hud")]
+
+[node name="SkillPanel" parent="." instance=ExtResource("5_skill_panel")]
+
+[node name="DialoguePanel" parent="." instance=ExtResource("9_dialogue")]
+
+[node name="MobileControls" parent="." instance=ExtResource("10_mobile_controls")]

@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/test_hud.gd" id="1_hud"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_hud"]
+bg_color = Color(0.025, 0.04, 0.065, 0.88)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.42, 0.5, 0.85)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="TestHUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 360.0
+offset_bottom = 195.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+theme_override_styles/panel = SubResource("StyleBox_hud")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+theme_override_constants/separation = 6
+
+[node name="KillsLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+text = "Echoes defeated: 0 / 5"
+theme_override_colors/font_color = Color(0.86, 0.93, 1, 1)
+
+[node name="LightLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+text = "Light: 0"
+theme_override_colors/font_color = Color(0.58, 0.93, 0.95, 1)
+
+[node name="ObjectiveLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+autowrap_mode = 2
+text = "Defeat five Brittle Echoes."
+theme_override_colors/font_color = Color(0.75, 0.82, 0.9, 1)
+
+[node name="HealthLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+text = "Health: 3 / 3"
+theme_override_colors/font_color = Color(1, 0.72, 0.72, 1)
+
+[node name="WorldLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+text = "World memory: Stable"
+theme_override_colors/font_color = Color(0.68, 0.82, 0.93, 1)
