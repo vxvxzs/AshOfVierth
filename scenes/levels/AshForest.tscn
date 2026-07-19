@@ -1,0 +1,48 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/ash_forest.gd" id="1_level"]
+[ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/world/WorldCheckpoint.tscn" id="3_anchor"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/AshWitness.tscn" id="4_witness"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/AshHound.tscn" id="5_hound"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/RootWarden.tscn" id="6_root"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/BrittleEcho.tscn" id="7_echo"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/AshWarden.tscn" id="8_boss"]
+[ext_resource type="PackedScene" path="res://scenes/ui/TestHUD.tscn" id="9_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/SkillPanel.tscn" id="10_skill"]
+[ext_resource type="PackedScene" path="res://scenes/dialogue/DialoguePanel.tscn" id="11_dialogue"]
+[ext_resource type="PackedScene" path="res://scenes/ui/MobileControls.tscn" id="12_mobile"]
+[ext_resource type="PackedScene" path="res://scenes/world/MemoryTrace.tscn" id="13_trace"]
+
+[node name="AshForest" type="Node2D"]
+script = ExtResource("1_level")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(145, 398)
+
+[node name="ForestAnchor" parent="." instance=ExtResource("3_anchor")]
+position = Vector2(208, 438)
+anchor_id = &"ash_forest_anchor"
+
+[node name="AshWitness" parent="." instance=ExtResource("4_witness")]
+position = Vector2(252, 250)
+
+[node name="AshHound" parent="." instance=ExtResource("5_hound")]
+position = Vector2(400, 340)
+
+[node name="RootWarden" parent="." instance=ExtResource("6_root")]
+position = Vector2(625, 445)
+
+[node name="BrittleEcho" parent="." instance=ExtResource("7_echo")]
+position = Vector2(748, 295)
+
+[node name="AshWarden" parent="." instance=ExtResource("8_boss")]
+position = Vector2(1030, 365)
+
+[node name="TestHUD" parent="." instance=ExtResource("9_hud")]
+
+[node name="SkillPanel" parent="." instance=ExtResource("10_skill")]
+
+[node name="DialoguePanel" parent="." instance=ExtResource("11_dialogue")]
+
+[node name="MobileControls" parent="." instance=ExtResource("12_mobile")]

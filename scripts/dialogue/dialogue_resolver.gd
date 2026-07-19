@@ -2,7 +2,8 @@ class_name DialogueResolver
 extends RefCounted
 
 const DIALOGUE_PATHS := {
-	"spirit": "res://data/dialogue/spirit.json"
+	"spirit": "res://data/dialogue/spirit.json",
+	"ash_witness": "res://data/dialogue/ash_witness.json"
 }
 
 static func get_lines(dialogue_id: String, state: Node = null) -> Array:

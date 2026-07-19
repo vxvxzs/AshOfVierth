@@ -1,0 +1,19 @@
+{
+  "id": "ash_witness",
+  "entries": [
+    {
+      "conditions": { "flags_all": ["ash_forest_death_seen"] },
+      "lines": [
+        { "speaker": "Ash Witness", "text": "You are late. I watched you leave this path already." },
+        { "speaker": "Ash Witness", "text": "The ash remembers a body even when the body returns." }
+      ]
+    },
+    {
+      "conditions": {},
+      "lines": [
+        { "speaker": "Ash Witness", "text": "The path is young. It has not learned your weight yet." },
+        { "speaker": "Ash Witness", "text": "Past the roots, something is keeping the fire alive." }
+      ]
+    }
+  ]
+}

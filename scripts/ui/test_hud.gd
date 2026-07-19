@@ -4,7 +4,9 @@ extends CanvasLayer
 @onready var light_label: Label = $MarginContainer/PanelContainer/VBoxContainer/LightLabel
 @onready var objective_label: Label = $MarginContainer/PanelContainer/VBoxContainer/ObjectiveLabel
 @onready var health_label: Label = $MarginContainer/PanelContainer/VBoxContainer/HealthLabel
+@onready var health_bar: ProgressBar = $MarginContainer/PanelContainer/VBoxContainer/HealthBar
 @onready var stamina_label: Label = $MarginContainer/PanelContainer/VBoxContainer/StaminaLabel
+@onready var anchor_label: Label = $MarginContainer/PanelContainer/VBoxContainer/AnchorLabel
 @onready var world_label: Label = $MarginContainer/PanelContainer/VBoxContainer/WorldLabel
 
 var player_health := 3
@@ -17,6 +19,7 @@ func _ready() -> void:
 	ProgressionManager.light_points_changed.connect(_refresh)
 	ProgressionManager.reward_granted.connect(_on_reward_granted)
 	WorldState.death_count_changed.connect(_refresh)
+	WorldState.anchor_changed.connect(_on_anchor_changed)
 	ProgressionManager.objective_changed.connect(_on_objective_changed)
 	call_deferred("_bind_player_health")
 	_refresh()
@@ -37,7 +40,10 @@ func _refresh(_unused_value: int = 0) -> void:
 	light_label.text = "Light: %d" % ProgressionManager.light_points
 	objective_label.text = ProgressionManager.current_objective
 	health_label.text = "Health: %d / %d" % [player_health, player_max_health]
+	health_bar.max_value = player_max_health
+	health_bar.value = player_health
 	stamina_label.text = "Stamina: %d / %d" % [roundi(player_stamina), roundi(player_max_stamina)]
+	anchor_label.text = "Anchor: %s" % ("None" if not WorldState.has_anchor() else String(WorldState.current_anchor_id).replace("_", " "))
 	world_label.text = "World memory: %s" % WorldState.get_memory_state()
 
 func _on_reward_granted(amount: int) -> void:
@@ -55,3 +61,9 @@ func _on_player_stamina_changed(current_stamina: float, max_stamina: float) -> v
 	player_stamina = current_stamina
 	player_max_stamina = max_stamina
 	_refresh()
+
+func _on_anchor_changed(_anchor_id: StringName, _spawn_position: Vector2) -> void:
+	_refresh()
+
+func set_combat_counter_visible(is_visible: bool) -> void:
+	kills_label.visible = is_visible
