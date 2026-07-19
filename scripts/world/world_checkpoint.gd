@@ -5,12 +5,16 @@ signal activated(checkpoint)
 
 const ANCHOR_COLOR := Color("8ee6e8")
 
+@export var anchor_id: StringName = &"ash_well"
+
 var is_active := false
 
 func activate() -> void:
 	if is_active:
 		return
 	is_active = true
+	WorldState.set_anchor(anchor_id, get_spawn_position())
+	SaveManager.save_world_state()
 	activated.emit(self)
 	queue_redraw()
 

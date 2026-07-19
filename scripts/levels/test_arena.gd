@@ -32,7 +32,7 @@ func _ready() -> void:
 	mobile_controls.attack_requested.connect(player.request_light_attack)
 	mobile_controls.short_step_requested.connect(player.request_short_step)
 	ash_well.activate()
-	active_spawn_position = ash_well.get_spawn_position()
+	active_spawn_position = WorldState.current_anchor_position
 	ProgressionManager.set_objective("A brittle shape is moving nearby.")
 	_spawn_next_echo()
 	call_deferred("_show_combat_memory")
@@ -66,13 +66,13 @@ func _process(delta: float) -> void:
 func _on_player_died() -> void:
 	if dialogue_panel.is_open():
 		dialogue_panel.close_dialogue()
+	WorldState.register_death()
 	_create_memory_trace(player.global_position)
-	ProgressionManager.register_death()
 	respawn_time_left = RESPAWN_DELAY
 	shake_time_left = 0.16
 
 func _on_checkpoint_activated(checkpoint) -> void:
-	active_spawn_position = checkpoint.get_spawn_position()
+	active_spawn_position = WorldState.current_anchor_position
 
 func _spawn_next_echo() -> void:
 	if echoes_spawned >= TOTAL_ECHOES:
@@ -85,6 +85,7 @@ func _spawn_next_echo() -> void:
 	add_child(echo)
 
 func _on_echo_defeated() -> void:
+	ProgressionManager.register_echo_defeated()
 	await get_tree().create_timer(0.45).timeout
 	if not combat_lesson_complete and ProgressionManager.echo_kills >= LESSON_ECHOES:
 		ProgressionManager.set_objective("Follow the faint light and speak to the Spirit.")
@@ -105,7 +106,7 @@ func _on_spirit_met() -> void:
 func _create_memory_trace(trace_position: Vector2) -> void:
 	var trace: Node2D = MEMORY_TRACE_SCENE.instantiate()
 	trace.position = trace_position
-	trace.set_memory_number(ProgressionManager.death_count + 1)
+	trace.set_memory_number(WorldState.death_count)
 	add_child(trace)
 	memory_traces.append(trace)
 	if memory_traces.size() > MAX_VISIBLE_MEMORY_TRACES:
@@ -122,7 +123,7 @@ func _draw() -> void:
 	draw_string(ThemeDB.fallback_font, Vector2(100, 125), "ASH OF VIRETH — movement test", HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color("d8e7ff"))
 	var controls_text := "Touch: drag the left circle to move | tap STRIKE to attack" if _is_mobile_platform() else "WASD / Arrow Keys: move   |   J, Z or left mouse: attack"
 	draw_string(ThemeDB.fallback_font, Vector2(100, 158), controls_text, HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("9ab0c4"))
-	if ProgressionManager.death_count > 0:
+	if WorldState.death_count > 0:
 		draw_string(ThemeDB.fallback_font, Vector2(100, 190), "The arena remembers where you fell.", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("b1cee3"))
 
 func _is_mobile_platform() -> bool:

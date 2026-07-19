@@ -4,6 +4,7 @@ extends Node2D
 const INTERACTION_RADIUS := 82.0
 const SPIRIT_COLOR := Color("9cecf0")
 const PROMPT_COLOR := Color("d8ffff")
+const DIALOGUE_RESOLVER = preload("res://scripts/dialogue/dialogue_resolver.gd")
 
 signal first_conversation_finished
 
@@ -31,11 +32,11 @@ func _start_conversation() -> void:
 	var dialogue_panel := get_tree().get_first_node_in_group("dialogue_panel")
 	if dialogue_panel == null:
 		return
-	var is_first_conversation := not ProgressionManager.has_story_flag(&"spirit_met")
+	var is_first_conversation := not WorldState.has_flag(&"spirit_met")
 	if is_first_conversation:
 		dialogue_panel.dialogue_finished.connect(_on_first_conversation_closed, CONNECT_ONE_SHOT)
-	dialogue_panel.open_dialogue(_get_dialogue_lines())
-	ProgressionManager.set_story_flag(&"spirit_met")
+	dialogue_panel.open_dialogue(DIALOGUE_RESOLVER.get_lines("spirit"))
+	WorldState.set_flag(&"spirit_met")
 
 func unlock_for_conversation() -> void:
 	available = true
@@ -43,25 +44,6 @@ func unlock_for_conversation() -> void:
 
 func _on_first_conversation_closed() -> void:
 	first_conversation_finished.emit()
-
-func _get_dialogue_lines() -> Array[Dictionary]:
-	if not ProgressionManager.has_story_flag(&"spirit_met"):
-		if ProgressionManager.death_count > 0:
-			return [
-				{ "speaker": "Spirit", "text": "You came back." },
-				{ "speaker": "Spirit", "text": "The well kept the shape of your fall. I do not think it should be able to do that." },
-				{ "speaker": "Spirit", "text": "I know the shape of a sword. I do not know why." }
-			]
-		return [
-			{ "speaker": "Spirit", "text": "Wait. Do not move the shard." },
-			{ "speaker": "Spirit", "text": "No—move it. I think that is why I am here." },
-			{ "speaker": "Spirit", "text": "I know the shape of a sword. I do not know why." }
-		]
-	if ProgressionManager.death_count == 0:
-		return [{ "speaker": "Spirit", "text": "The well is listening." }]
-	if ProgressionManager.death_count < 4:
-		return [{ "speaker": "Spirit", "text": "I remembered you falling before I saw you wake." }]
-	return [{ "speaker": "Spirit", "text": "There are too many versions of you here. Please do not look at them too long." }]
 
 func _is_dialogue_open() -> bool:
 	var dialogue_panel := get_tree().get_first_node_in_group("dialogue_panel")

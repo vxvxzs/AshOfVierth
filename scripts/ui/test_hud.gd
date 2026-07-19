@@ -16,7 +16,7 @@ func _ready() -> void:
 	ProgressionManager.echo_kills_changed.connect(_refresh)
 	ProgressionManager.light_points_changed.connect(_refresh)
 	ProgressionManager.reward_granted.connect(_on_reward_granted)
-	ProgressionManager.death_registered.connect(_refresh)
+	WorldState.death_count_changed.connect(_refresh)
 	ProgressionManager.objective_changed.connect(_on_objective_changed)
 	call_deferred("_bind_player_health")
 	_refresh()
@@ -38,7 +38,7 @@ func _refresh(_unused_value: int = 0) -> void:
 	objective_label.text = ProgressionManager.current_objective
 	health_label.text = "Health: %d / %d" % [player_health, player_max_health]
 	stamina_label.text = "Stamina: %d / %d" % [roundi(player_stamina), roundi(player_max_stamina)]
-	world_label.text = "World memory: %s" % ProgressionManager.get_world_memory_state()
+	world_label.text = "World memory: %s" % WorldState.get_memory_state()
 
 func _on_reward_granted(amount: int) -> void:
 	objective_label.text = "+%d Light." % amount

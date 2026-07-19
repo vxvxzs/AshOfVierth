@@ -1,0 +1,33 @@
+{
+  "id": "spirit",
+  "entries": [
+    {
+      "conditions": { "flags_none": ["spirit_met"], "min_deaths": 1 },
+      "lines": [
+        { "speaker": "Spirit", "text": "You came back." },
+        { "speaker": "Spirit", "text": "The well kept the shape of your fall. I do not think it should be able to do that." },
+        { "speaker": "Spirit", "text": "I know the shape of a sword. I do not know why." }
+      ]
+    },
+    {
+      "conditions": { "flags_none": ["spirit_met"] },
+      "lines": [
+        { "speaker": "Spirit", "text": "Wait. Do not move the shard." },
+        { "speaker": "Spirit", "text": "No - move it. I think that is why I am here." },
+        { "speaker": "Spirit", "text": "I know the shape of a sword. I do not know why." }
+      ]
+    },
+    {
+      "conditions": { "flags_all": ["spirit_met"], "max_deaths": 0 },
+      "lines": [{ "speaker": "Spirit", "text": "The well is listening." }]
+    },
+    {
+      "conditions": { "flags_all": ["spirit_met"], "min_deaths": 1, "max_deaths": 3 },
+      "lines": [{ "speaker": "Spirit", "text": "I remembered you falling before I saw you wake." }]
+    },
+    {
+      "conditions": { "flags_all": ["spirit_met"], "min_deaths": 4 },
+      "lines": [{ "speaker": "Spirit", "text": "There are too many versions of you here. Please do not look at them too long." }]
+    }
+  ]
+}
