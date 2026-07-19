@@ -23,6 +23,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_E:
 		_start_conversation()
 		get_viewport().set_input_as_handled()
+	elif event is InputEventScreenTouch and event.pressed and event.position.distance_to(global_position) <= INTERACTION_RADIUS:
+		_start_conversation()
+		get_viewport().set_input_as_handled()
 
 func _start_conversation() -> void:
 	var dialogue_panel := get_tree().get_first_node_in_group("dialogue_panel")
@@ -71,4 +74,8 @@ func _draw() -> void:
 	draw_colored_polygon(PackedVector2Array([Vector2(0, -34), Vector2(14, -4), Vector2(5, 23), Vector2(0, 32), Vector2(-6, 23), Vector2(-14, -4)]), SPIRIT_COLOR)
 	draw_circle(Vector2(0, -3), 8.0, Color("2e5664"))
 	if available and player_nearby and not _is_dialogue_open():
-		draw_string(ThemeDB.fallback_font, Vector2(-48, -54), "E: Speak", HORIZONTAL_ALIGNMENT_CENTER, 96, 16, PROMPT_COLOR)
+		var prompt := "Tap the Spirit" if _is_mobile_platform() else "E: Speak"
+		draw_string(ThemeDB.fallback_font, Vector2(-56, -54), prompt, HORIZONTAL_ALIGNMENT_CENTER, 112, 16, PROMPT_COLOR)
+
+func _is_mobile_platform() -> bool:
+	return OS.has_feature("mobile") or OS.has_feature("ios") or OS.has_feature("android")

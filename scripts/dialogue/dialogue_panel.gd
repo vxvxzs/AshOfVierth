@@ -57,4 +57,7 @@ func _render_current_line() -> void:
 	var line: Dictionary = lines[current_line_index]
 	speaker_label.text = str(line.get("speaker", "Unknown"))
 	body_label.text = str(line.get("text", ""))
-	continue_label.text = "Tap or press E to continue"
+	continue_label.text = "Tap to continue" if _is_mobile_platform() else "Press E, Space or click to continue"
+
+func _is_mobile_platform() -> bool:
+	return OS.has_feature("mobile") or OS.has_feature("ios") or OS.has_feature("android")

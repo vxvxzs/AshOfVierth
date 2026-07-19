@@ -25,13 +25,17 @@ func _on_ability_unlocked(ability_id: StringName) -> void:
 
 func _refresh() -> void:
 	if ProgressionManager.is_ability_unlocked(&"short_step"):
-		status_label.text = "Short Step awakened.\nUse Space for a short evasive step."
+		var instruction := "Tap STEP for a short evasive step." if _is_mobile_platform() else "Use Space for a short evasive step."
+		status_label.text = "Short Step awakened.\n%s" % instruction
 		unlock_button.text = "Awakened"
 		unlock_button.disabled = true
 	else:
 		status_label.text = "Short Step\nA small evasive step.\nCost: %d Light\nCurrent: %d" % [ProgressionManager.SHORT_STEP_COST, ProgressionManager.light_points]
 		unlock_button.text = "Awaken Short Step"
 		unlock_button.disabled = ProgressionManager.light_points < ProgressionManager.SHORT_STEP_COST
+
+func _is_mobile_platform() -> bool:
+	return OS.has_feature("mobile") or OS.has_feature("ios") or OS.has_feature("android")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if visible and event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE:

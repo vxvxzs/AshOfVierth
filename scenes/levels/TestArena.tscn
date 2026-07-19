@@ -21,7 +21,7 @@ position = Vector2(640, 312)
 position = Vector2(640, 360)
 
 [node name="Spirit" parent="." instance=ExtResource("8_spirit")]
-position = Vector2(1030, 440)
+position = Vector2(880, 270)
 
 [node name="EchoSpawn1" type="Marker2D" parent="."]
 position = Vector2(400, 250)

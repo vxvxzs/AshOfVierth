@@ -120,6 +120,10 @@ func _draw() -> void:
 	for y in range(int(ARENA_RECT.position.y) + 40, int(ARENA_RECT.end.y), 40):
 		draw_line(Vector2(ARENA_RECT.position.x, y), Vector2(ARENA_RECT.end.x, y), GRID_COLOR, 1.0)
 	draw_string(ThemeDB.fallback_font, Vector2(100, 125), "ASH OF VIRETH — movement test", HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color("d8e7ff"))
-	draw_string(ThemeDB.fallback_font, Vector2(100, 158), "WASD / Arrow Keys: move   |   J, Z or left mouse: attack", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("9ab0c4"))
+	var controls_text := "Touch: drag the left circle to move | tap STRIKE to attack" if _is_mobile_platform() else "WASD / Arrow Keys: move   |   J, Z or left mouse: attack"
+	draw_string(ThemeDB.fallback_font, Vector2(100, 158), controls_text, HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("9ab0c4"))
 	if ProgressionManager.death_count > 0:
 		draw_string(ThemeDB.fallback_font, Vector2(100, 190), "The arena remembers where you fell.", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("b1cee3"))
+
+func _is_mobile_platform() -> bool:
+	return OS.has_feature("mobile") or OS.has_feature("ios") or OS.has_feature("android")

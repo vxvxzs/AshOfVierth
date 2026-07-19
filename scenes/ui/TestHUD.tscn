@@ -50,6 +50,10 @@ theme_override_colors/font_color = Color(0.75, 0.82, 0.9, 1)
 text = "Health: 3 / 3"
 theme_override_colors/font_color = Color(1, 0.72, 0.72, 1)
 
+[node name="StaminaLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+text = "Stamina: 100 / 100"
+theme_override_colors/font_color = Color(0.94, 0.79, 0.4, 1)
+
 [node name="WorldLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
 text = "World memory: Stable"
 theme_override_colors/font_color = Color(0.68, 0.82, 0.93, 1)
