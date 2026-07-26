@@ -1,0 +1,83 @@
+extends CanvasLayer
+
+@onready var kills_label: Label = $MarginContainer/PanelContainer/VBoxContainer/KillsLabel
+@onready var light_label: Label = $MarginContainer/PanelContainer/VBoxContainer/LightLabel
+@onready var objective_label: Label = $MarginContainer/PanelContainer/VBoxContainer/ObjectiveLabel
+@onready var health_label: Label = $MarginContainer/PanelContainer/VBoxContainer/HealthLabel
+@onready var health_bar: ProgressBar = $MarginContainer/PanelContainer/VBoxContainer/HealthBar
+@onready var stamina_label: Label = $MarginContainer/PanelContainer/VBoxContainer/StaminaLabel
+@onready var anchor_label: Label = $MarginContainer/PanelContainer/VBoxContainer/AnchorLabel
+@onready var world_label: Label = $MarginContainer/PanelContainer/VBoxContainer/WorldLabel
+@onready var anomaly_flash: ColorRect = $AnomalyFlash
+@onready var anchor_shard: ColorRect = $AnchorShard
+
+var player_health := 3
+var player_max_health := 3
+var player_stamina := 100.0
+var player_max_stamina := 100.0
+
+func _ready() -> void:
+	ProgressionManager.echo_kills_changed.connect(_refresh)
+	ProgressionManager.light_points_changed.connect(_refresh)
+	ProgressionManager.reward_granted.connect(_on_reward_granted)
+	WorldState.death_count_changed.connect(_refresh)
+	WorldState.anchor_changed.connect(_on_anchor_changed)
+	ProgressionManager.objective_changed.connect(_on_objective_changed)
+	call_deferred("_bind_player_health")
+	_refresh()
+
+func _bind_player_health() -> void:
+	var player := get_tree().get_first_node_in_group("player")
+	if player != null:
+		player.health.health_changed.connect(_on_player_health_changed)
+		player.combat.stamina_changed.connect(_on_player_stamina_changed)
+		player_health = player.health.current_health
+		player_max_health = player.health.MAX_HEALTH
+		player_stamina = player.combat.get_stamina()
+		player_max_stamina = player.combat.MAX_STAMINA
+		_refresh()
+
+func _refresh(_unused_value: int = 0) -> void:
+	kills_label.text = "Echoes defeated: %d / %d" % [min(ProgressionManager.echo_kills, ProgressionManager.ECHO_KILLS_FOR_FIRST_REWARD), ProgressionManager.ECHO_KILLS_FOR_FIRST_REWARD]
+	light_label.text = "Light: %d" % ProgressionManager.light_points
+	objective_label.text = ProgressionManager.current_objective
+	health_label.text = "Health: %d / %d" % [player_health, player_max_health]
+	health_bar.max_value = player_max_health
+	health_bar.value = player_health
+	stamina_label.text = "Stamina: %d / %d" % [roundi(player_stamina), roundi(player_max_stamina)]
+	anchor_label.text = "Anchor: %s" % ("None" if not WorldState.has_anchor() else String(WorldState.current_anchor_id).replace("_", " "))
+	world_label.text = "World memory: %s" % WorldState.get_memory_state()
+
+func _on_reward_granted(amount: int) -> void:
+	objective_label.text = "+%d Light." % amount
+
+func _on_objective_changed(new_objective: String) -> void:
+	objective_label.text = new_objective
+
+func _on_player_health_changed(current_health: int, max_health: int) -> void:
+	player_health = current_health
+	player_max_health = max_health
+	_refresh()
+
+func _on_player_stamina_changed(current_stamina: float, max_stamina: float) -> void:
+	player_stamina = current_stamina
+	player_max_stamina = max_stamina
+	_refresh()
+
+func _on_anchor_changed(_anchor_id: StringName, _spawn_position: Vector2) -> void:
+	_refresh()
+
+func set_combat_counter_visible(is_visible: bool) -> void:
+	kills_label.visible = is_visible
+
+func play_anomaly_flash() -> void:
+	anomaly_flash.color.a = 0.0
+	anomaly_flash.show()
+	var flash := create_tween()
+	flash.tween_property(anomaly_flash, "color:a", 0.58, 0.10)
+	flash.tween_property(anomaly_flash, "color:a", 0.0, 0.35)
+	flash.tween_callback(anomaly_flash.hide)
+
+func dim_anchor_shard() -> void:
+	var dim := create_tween()
+	dim.tween_property(anchor_shard, "modulate", Color(0.18, 0.22, 0.25, 1.0), 0.22)

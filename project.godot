@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="AshOfVireth"
+config/name="AshOfVierth"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
@@ -19,7 +19,11 @@ config/icon="res://icon.svg"
 
 ProgressionManager="*res://scripts/systems/progression_manager.gd"
 WorldState="*res://scripts/autoload/world_state.gd"
+DialogueManager="*res://scripts/autoload/dialogue_manager.gd"
 SaveManager="*res://scripts/autoload/save_manager.gd"
+SceneDirector="*res://scripts/autoload/scene_director.gd"
+AudioManager="*res://scripts/autoload/audio_manager.gd"
+DayNightCycle="*res://scripts/autoload/day_night_cycle.gd"
 
 [display]
 
@@ -32,3 +36,5 @@ window/stretch/mode="canvas_items"
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/default_filters/use_nearest_mipmap_filter=true
+2d/snap/snap_2d_transforms_to_pixel=true
