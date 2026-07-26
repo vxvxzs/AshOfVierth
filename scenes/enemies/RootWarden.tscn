@@ -17,6 +17,7 @@ attack_reach = 52.0
 telegraph_duration = 0.82
 recovery_duration = 0.62
 active_hit_duration = 0.20
+display_name = "Root Warden"
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 2

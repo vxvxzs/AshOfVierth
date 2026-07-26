@@ -17,6 +17,7 @@ attack_reach = 60.0
 telegraph_duration = 0.68
 recovery_duration = 0.58
 active_hit_duration = 0.18
+display_name = "Ash Warden"
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 2

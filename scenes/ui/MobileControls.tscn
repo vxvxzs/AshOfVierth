@@ -59,3 +59,35 @@ grow_vertical = 0
 script = ExtResource("3_button")
 caption = "STEP"
 accent_color = Color(0.25, 0.69, 0.74, 1)
+
+[node name="ParryButton" type="Control" parent="Root"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -340.0
+offset_top = -154.0
+offset_right = -218.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("3_button")
+caption = "GUARD"
+accent_color = Color(0.31, 0.73, 0.78, 1)
+
+[node name="InteractButton" type="Control" parent="Root"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -194.0
+offset_top = -188.0
+offset_right = -38.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("3_button")
+caption = "USE"
+accent_color = Color(0.52, 0.67, 0.45, 1)

@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_panel.gd" id="1_dialogue"]
+[ext_resource type="Theme" path="res://assets/ui/ornate/ornate_theme.tres" id="2_theme"]
+
+[node name="DialogueUI" type="CanvasLayer" groups=["dialogue_panel"]]
+layer = 10
+script = ExtResource("1_dialogue")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.008, 0.007, 0.006, 0.58)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 58.0
+offset_top = -314.0
+offset_right = -58.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme = ExtResource("2_theme")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+
+[node name="DialogueRow" type="HBoxContainer" parent="MarginContainer/PanelContainer"]
+theme_override_constants/separation = 22
+
+[node name="PortraitFrame" type="PanelContainer" parent="MarginContainer/PanelContainer/DialogueRow"]
+custom_minimum_size = Vector2(154, 154)
+layout_mode = 2
+theme_type_variation = &"PortraitFrame"
+
+[node name="Portrait" type="TextureRect" parent="MarginContainer/PanelContainer/DialogueRow/PortraitFrame"]
+layout_mode = 2
+texture_filter = 1
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Content" type="VBoxContainer" parent="MarginContainer/PanelContainer/DialogueRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="SpeakerLabel" type="Label" parent="MarginContainer/PanelContainer/DialogueRow/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91, 0.72, 0.41, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.85)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 21
+
+[node name="BodyLabel" type="Label" parent="MarginContainer/PanelContainer/DialogueRow/Content"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.91, 0.88, 0.8, 1)
+theme_override_font_sizes/font_size = 21
+autowrap_mode = 2
+
+[node name="Choices" type="VBoxContainer" parent="MarginContainer/PanelContainer/DialogueRow/Content"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ChoiceStyleTemplate" type="Button" parent="MarginContainer/PanelContainer/DialogueRow/Content/Choices"]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+
+[node name="ContinueLabel" type="Label" parent="MarginContainer/PanelContainer/DialogueRow/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57, 0.49, 0.39, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 2

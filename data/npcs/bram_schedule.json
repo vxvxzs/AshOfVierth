@@ -1,0 +1,14 @@
+{
+  "npc_id": "bram",
+  "display_name": "Bram",
+  "walk_speed": 31.0,
+  "entries": [
+    { "time": "00:00", "location": "bram_home", "activity": "sleep" },
+    { "time": "06:30", "location": "bridge_south", "activity": "inspect_bridge" },
+    { "time": "09:00", "location": "market_tool_stall", "activity": "repair_tools" },
+    { "time": "13:00", "location": "river_bank", "activity": "midday_break" },
+    { "time": "14:00", "location": "market_tool_stall", "activity": "repair_tools" },
+    { "time": "19:00", "location": "tavern_interior", "activity": "socialize" },
+    { "time": "22:30", "location": "bram_home", "activity": "sleep" }
+  ]
+}

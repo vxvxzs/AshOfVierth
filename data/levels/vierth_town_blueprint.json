@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "tile_size": 32,
+  "map_size": [50, 35],
+  "seed": 7441,
+  "player_spawn": [25.0, 32.0],
+  "camera": {
+    "zoom": 1.6,
+    "deadzone_size": [96.0, 60.0],
+    "follow_speed": 8.0,
+    "transition_duration": 0.65
+  },
+  "terrain": {
+    "river": {
+      "center_x": 39.0,
+      "half_width": 3.0
+    },
+    "main_street": {
+      "center_x": 25.0,
+      "half_width": 3.25
+    },
+    "cross_street": {
+      "center_y": 17.0,
+      "half_width": 2.5
+    },
+    "town_square": {
+      "center": [25.0, 17.0],
+      "half_size": [6.5, 5.0]
+    },
+    "bridge_y": 17.0
+  },
+  "landmarks": {
+    "TownSquare": [25.0, 17.0],
+    "ElianBakery": [15.0, 11.0],
+    "Tavern": [12.0, 23.0],
+    "IvenHouse": [30.0, 8.0],
+    "River": [39.0, 17.0],
+    "StoneBridge": [39.0, 17.0]
+  },
+  "named_locations": {
+    "gate": [25.0, 31.0],
+    "market": [22.0, 17.0],
+    "well": [25.0, 17.0],
+    "bakery": [15.0, 13.5],
+    "tavern": [12.0, 25.5],
+    "oren_home": [29.0, 25.0],
+    "mira_home": [33.0, 22.0],
+    "elian_home": [15.0, 12.5],
+    "resident_home_a": [7.5, 8.0],
+    "resident_home_b": [7.5, 17.0],
+    "resident_home_c": [31.0, 8.0],
+    "gate_oren": [23.7, 30.2],
+    "gate_mira": [26.3, 30.2],
+    "town_well": [25.0, 17.0],
+    "tavern_porch": [12.0, 25.2],
+    "bakery_door": [15.0, 13.6],
+    "bakery_oven": [14.3, 12.5],
+    "bakery_counter": [15.4, 12.8],
+    "market_bakery_stall": [20.5, 15.0],
+    "alda_home": [7.5, 8.0],
+    "river_bank": [35.2, 20.0],
+    "market_cloth_stall": [29.5, 15.0],
+    "bram_home": [7.5, 17.0],
+    "bridge_south": [39.0, 19.2],
+    "market_tool_stall": [20.5, 20.0],
+    "tavern_interior": [12.0, 23.5],
+    "cerys_home": [31.5, 24.0],
+    "iven_house_gate": [30.0, 10.2],
+    "town_square": [25.0, 17.0],
+    "bridge_north": [39.0, 14.8]
+  },
+  "scheduled_npcs": [
+    {
+      "id": "oren",
+      "display_name": "Oren",
+      "schedule": "oren_schedule.json",
+      "color": "657d69"
+    },
+    {
+      "id": "mira",
+      "display_name": "Mira",
+      "schedule": "mira_schedule.json",
+      "color": "8f6757"
+    },
+    {
+      "id": "elian",
+      "display_name": "Elian",
+      "schedule": "elian_schedule.json",
+      "color": "b7835a"
+    },
+    {
+      "id": "alda",
+      "display_name": "Alda",
+      "schedule": "alda_schedule.json",
+      "color": "815f7b"
+    },
+    {
+      "id": "bram",
+      "display_name": "Bram",
+      "schedule": "bram_schedule.json",
+      "color": "6b6d55"
+    },
+    {
+      "id": "cerys",
+      "display_name": "Cerys",
+      "schedule": "cerys_schedule.json",
+      "color": "4c6f7b"
+    }
+  ],
+  "buildings": [
+    {
+      "name": "ElianBakery",
+      "asset": "bakery.png",
+      "position": [15.0, 11.0],
+      "collision_size": [204.0, 30.0],
+      "collision_offset": [0.0, -13.0]
+    },
+    {
+      "name": "Tavern",
+      "asset": "tavern.png",
+      "position": [12.0, 23.0],
+      "collision_size": [250.0, 34.0],
+      "collision_offset": [0.0, -15.0]
+    },
+    {
+      "name": "IvenHouse",
+      "asset": "iven_house.png",
+      "position": [30.0, 8.0],
+      "collision_size": [170.0, 28.0],
+      "collision_offset": [0.0, -12.0]
+    },
+    {
+      "name": "ResidentHouseA",
+      "asset": "resident_house_a.png",
+      "position": [7.5, 7.0],
+      "collision_size": [158.0, 26.0],
+      "collision_offset": [0.0, -11.0]
+    },
+    {
+      "name": "ResidentHouseB",
+      "asset": "resident_house_b.png",
+      "position": [7.5, 16.0],
+      "collision_size": [158.0, 26.0],
+      "collision_offset": [0.0, -11.0]
+    },
+    {
+      "name": "ResidentHouseC",
+      "asset": "resident_house_c.png",
+      "position": [31.5, 24.0],
+      "collision_size": [158.0, 26.0],
+      "collision_offset": [0.0, -11.0]
+    }
+  ],
+  "stalls": [
+    [20.5, 15.0, "amber"],
+    [29.5, 15.0, "red"],
+    [20.5, 20.0, "green"],
+    [29.5, 20.0, "blue"]
+  ],
+  "lamps": [
+    [21.0, 12.5],
+    [29.0, 12.5],
+    [19.0, 17.0],
+    [31.0, 17.0],
+    [21.0, 22.0],
+    [29.0, 22.0],
+    [35.0, 17.0],
+    [43.0, 17.0],
+    [25.0, 27.5]
+  ],
+  "torches": [
+    {
+      "name": "GateTorchWest",
+      "position": [23.5, 30.2]
+    },
+    {
+      "name": "GateTorchEast",
+      "position": [26.5, 30.2]
+    },
+    {
+      "name": "TavernTorchWest",
+      "position": [10.7, 25.1]
+    },
+    {
+      "name": "TavernTorchEast",
+      "position": [13.3, 25.1]
+    },
+    {
+      "name": "BakeryTorch",
+      "position": [15.0, 13.6]
+    }
+  ],
+  "trees": [
+    [3.0, 4.0], [5.5, 12.0], [3.0, 23.0], [6.0, 30.0],
+    [18.0, 5.0], [21.0, 6.0], [34.0, 4.5], [36.0, 8.0],
+    [45.0, 5.0], [47.0, 12.0], [46.0, 25.0], [43.0, 31.0],
+    [17.0, 29.0], [33.0, 30.0]
+  ]
+}

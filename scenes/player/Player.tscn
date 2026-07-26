@@ -1,13 +1,272 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=61 format=3 uid="uid://cmglc5xiep1fb"]
 
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_player"]
-[ext_resource type="Script" path="res://scripts/player/components/player_movement.gd" id="2_movement"]
-[ext_resource type="Script" path="res://scripts/player/components/player_combat.gd" id="3_combat"]
-[ext_resource type="Script" path="res://scripts/player/components/player_abilities.gd" id="4_abilities"]
-[ext_resource type="Script" path="res://scripts/player/components/player_health.gd" id="5_health"]
+[ext_resource type="Script" uid="uid://by4s7orgxutvt" path="res://scripts/player/player.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://fwjukdx433nc" path="res://scripts/player/components/player_movement.gd" id="2_movement"]
+[ext_resource type="Script" uid="uid://t3dqes1qtvqf" path="res://scripts/player/components/player_combat.gd" id="3_combat"]
+[ext_resource type="Script" uid="uid://d2wd1ehl8bu2" path="res://scripts/player/components/player_abilities.gd" id="4_abilities"]
+[ext_resource type="Script" uid="uid://be45vc4rjsdkn" path="res://scripts/player/components/player_health.gd" id="5_health"]
+[ext_resource type="Script" uid="uid://cdgof2lhfpt2d" path="res://scripts/player/components/player_defense.gd" id="6_defense"]
+[ext_resource type="Texture2D" uid="uid://cy4fucte2nbud" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/east/frame_000.png" id="7_ktadw"]
+[ext_resource type="Texture2D" uid="uid://c1j5al7o1yar2" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/east/frame_001.png" id="8_7r4bu"]
+[ext_resource type="Texture2D" uid="uid://d3kec37mugovd" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/east/frame_002.png" id="9_8vtq1"]
+[ext_resource type="Texture2D" uid="uid://bnkiarl1borj3" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/east/frame_003.png" id="10_use2k"]
+[ext_resource type="Texture2D" uid="uid://cf8sl7u8elhhq" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/north/frame_000.png" id="11_7647m"]
+[ext_resource type="Texture2D" uid="uid://6ba5lb0js7ha" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/north/frame_001.png" id="12_qillh"]
+[ext_resource type="Texture2D" uid="uid://cem0p3yfe35pk" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/north/frame_002.png" id="13_q6dsj"]
+[ext_resource type="Texture2D" uid="uid://v1igf7jyjemv" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/north/frame_003.png" id="14_t8twg"]
+[ext_resource type="Texture2D" uid="uid://cg3w6u64lp5r2" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/north-east/frame_000.png" id="15_ijqjm"]
+[ext_resource type="Texture2D" uid="uid://u5roevm7ge1r" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/north-east/frame_001.png" id="16_2357c"]
+[ext_resource type="Texture2D" uid="uid://cah4q8dv27uux" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/north-east/frame_002.png" id="17_duftu"]
+[ext_resource type="Texture2D" uid="uid://clm8gllcqq8qr" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/north-east/frame_003.png" id="18_g5re5"]
+[ext_resource type="Texture2D" uid="uid://cpxm5ys5sg2of" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/south/frame_000.png" id="19_80bwr"]
+[ext_resource type="Texture2D" uid="uid://dk3r13hylbay4" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/south/frame_001.png" id="20_5kfw2"]
+[ext_resource type="Texture2D" uid="uid://j117d4wwy3a5" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/south/frame_002.png" id="21_sydpy"]
+[ext_resource type="Texture2D" uid="uid://c42ur2eowdiby" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/south/frame_003.png" id="22_ojq00"]
+[ext_resource type="Texture2D" uid="uid://b7iav1yxvxjti" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/south-east/frame_000.png" id="23_50p5b"]
+[ext_resource type="Texture2D" uid="uid://d382f26e08g3w" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/south-east/frame_001.png" id="24_hpr8l"]
+[ext_resource type="Texture2D" uid="uid://bm43vdfr4ab0w" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/south-east/frame_002.png" id="25_fnh0x"]
+[ext_resource type="Texture2D" uid="uid://ctyvqb24foqe8" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Breathing_Idle/south-east/frame_003.png" id="26_purxm"]
+[ext_resource type="Texture2D" uid="uid://yvu4wr2sdek6" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/east/frame_000.png" id="27_c8pdp"]
+[ext_resource type="Texture2D" uid="uid://bpa2aa8tko2j0" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/east/frame_001.png" id="28_w1n18"]
+[ext_resource type="Texture2D" uid="uid://dglqcal4pfxgo" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/east/frame_002.png" id="29_ku70u"]
+[ext_resource type="Texture2D" uid="uid://c03067xoejgd0" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/east/frame_003.png" id="30_rfmjp"]
+[ext_resource type="Texture2D" uid="uid://ebop7x10crlr" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/east/frame_004.png" id="31_f41xu"]
+[ext_resource type="Texture2D" uid="uid://bdslb4ae2rn83" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/east/frame_005.png" id="32_jeao8"]
+[ext_resource type="Texture2D" uid="uid://kvkd06igv4ix" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north/frame_000.png" id="33_ciwok"]
+[ext_resource type="Texture2D" uid="uid://yqfnqgp4ye3i" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north/frame_001.png" id="34_2eu1x"]
+[ext_resource type="Texture2D" uid="uid://yahd5gwf8723" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north/frame_002.png" id="35_wqauo"]
+[ext_resource type="Texture2D" uid="uid://c1lspv77q2awq" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north/frame_003.png" id="36_4f1j1"]
+[ext_resource type="Texture2D" uid="uid://dvtdhy4p0q6ok" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north/frame_004.png" id="37_5hfpr"]
+[ext_resource type="Texture2D" uid="uid://rq0vjqu8q3st" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north/frame_005.png" id="38_dml0x"]
+[ext_resource type="Texture2D" uid="uid://brrj1evodmwmg" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north-east/frame_000.png" id="39_w5p2j"]
+[ext_resource type="Texture2D" uid="uid://bw70oswluui6k" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north-east/frame_001.png" id="40_rv8db"]
+[ext_resource type="Texture2D" uid="uid://5v3mqjoy5uk" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north-east/frame_002.png" id="41_tqai2"]
+[ext_resource type="Texture2D" uid="uid://bcexokr0oyqg" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north-east/frame_003.png" id="42_wq4pn"]
+[ext_resource type="Texture2D" uid="uid://ctpt37ggclxlt" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north-east/frame_004.png" id="43_kxljp"]
+[ext_resource type="Texture2D" uid="uid://dsywcof3leso2" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/north-east/frame_005.png" id="44_w1jrl"]
+[ext_resource type="Texture2D" uid="uid://420v2l8lrc1s" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south/frame_000.png" id="45_u4mq1"]
+[ext_resource type="Texture2D" uid="uid://blv51053yn7ua" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south/frame_001.png" id="46_jvqad"]
+[ext_resource type="Texture2D" uid="uid://1l6ytmtr2bk3" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south/frame_002.png" id="47_0jidv"]
+[ext_resource type="Texture2D" uid="uid://dt86eowli2to0" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south/frame_003.png" id="48_7l65s"]
+[ext_resource type="Texture2D" uid="uid://cloqxwmq7wtlc" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south/frame_004.png" id="49_w8puq"]
+[ext_resource type="Texture2D" uid="uid://b8phfohe3qtsl" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south/frame_005.png" id="50_0pnis"]
+[ext_resource type="Texture2D" uid="uid://b5f7f1w1dw7gt" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south-east/frame_000.png" id="51_s8suy"]
+[ext_resource type="Texture2D" uid="uid://ruo6h4hopr8f" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south-east/frame_001.png" id="52_x3m6h"]
+[ext_resource type="Texture2D" uid="uid://cdhfl67t60ot" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south-east/frame_002.png" id="53_f2wld"]
+[ext_resource type="Texture2D" uid="uid://q4vbe5shtmhy" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south-east/frame_003.png" id="54_h2bbt"]
+[ext_resource type="Texture2D" uid="uid://mcfoyd8gl76q" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south-east/frame_004.png" id="55_4gydf"]
+[ext_resource type="Texture2D" uid="uid://clo44mwicwo4d" path="res://assets/art/characters/iven/Full-body_character_sprite_of_Iven/animations/Walk/south-east/frame_005.png" id="56_kt2pj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape_player"]
 radius = 18.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ktadw"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ktadw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7r4bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8vtq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_use2k")
+}],
+"loop": true,
+"name": &"idle_east",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_7647m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qillh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_q6dsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t8twg")
+}],
+"loop": true,
+"name": &"idle_north",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ijqjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2357c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_duftu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g5re5")
+}],
+"loop": true,
+"name": &"idle_north_east",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_80bwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5kfw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_sydpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ojq00")
+}],
+"loop": true,
+"name": &"idle_south",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_50p5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hpr8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_fnh0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_purxm")
+}],
+"loop": true,
+"name": &"idle_south_east",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_c8pdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_w1n18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ku70u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_rfmjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_f41xu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jeao8")
+}],
+"loop": true,
+"name": &"walk_east",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_ciwok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_2eu1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_wqauo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_4f1j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_5hfpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_dml0x")
+}],
+"loop": true,
+"name": &"walk_north",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_w5p2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_rv8db")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_tqai2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_wq4pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_kxljp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_w1jrl")
+}],
+"loop": true,
+"name": &"walk_north_east",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_u4mq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_jvqad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_0jidv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_7l65s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_w8puq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_0pnis")
+}],
+"loop": true,
+"name": &"walk_south",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_s8suy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_x3m6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_f2wld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_h2bbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_4gydf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_kt2pj")
+}],
+"loop": true,
+"name": &"walk_south_east",
+"speed": 8.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape_attack"]
 radius = 26.0
@@ -33,7 +292,32 @@ script = ExtResource("4_abilities")
 [node name="Health" type="Node" parent="."]
 script = ExtResource("5_health")
 
+[node name="Defense" type="Node" parent="."]
+script = ExtResource("6_defense")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -28)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_ktadw")
+animation = &"walk_north_east"
+
+[node name="GroundShadow" type="Polygon2D" parent="."]
+z_index = -1
+position = Vector2(-14, -2)
+scale = Vector2(1.38, 0.32)
+color = Color(0.12, 0.055, 0.02, 0.26)
+polygon = PackedVector2Array(-20, 0, -18, -6, -11, -10, 0, -12, 11, -10, 18, -6, 20, 0, 18, 6, 11, 10, 0, 12, -11, 10, -18, 6)
+
+[node name="GroundShadowSoft" type="Polygon2D" parent="."]
+z_index = -2
+position = Vector2(-17, -3)
+scale = Vector2(1.76, 0.501667)
+color = Color(0.16, 0.075, 0.025, 0.11)
+polygon = PackedVector2Array(-20, 0, -18, -6, -11, -10, 0, -12, 11, -10, 18, -6, 20, 0, 18, 6, 11, 10, 0, 12, -11, 10, -18, 6)
+
 [node name="AttackHitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 monitoring = false
@@ -44,9 +328,10 @@ shape = SubResource("CircleShape_attack")
 disabled = true
 
 [node name="Hurtbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 0
-monitorable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+visible = false
 shape = SubResource("CircleShape_hurtbox")

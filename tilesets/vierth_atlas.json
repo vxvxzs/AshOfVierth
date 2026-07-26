@@ -1,0 +1,157 @@
+{
+  "tile_size": 32,
+  "ground_pixels_per_world_unit": 1,
+  "ground_pixel_size": [
+	960,
+	640
+  ],
+  "ground_resampled": false,
+  "atlas_columns": 4,
+  "atlas_rows": 4,
+  "tiles": [
+	{
+	  "id": 0,
+	  "name": "autumn_grass",
+	  "atlas": [
+		0,
+		0
+	  ],
+	  "scene_usage": "terrain"
+	},
+	{
+	  "id": 1,
+	  "name": "leaf_grass",
+	  "atlas": [
+		1,
+		0
+	  ],
+	  "scene_usage": "terrain"
+	},
+	{
+	  "id": 2,
+	  "name": "road_center",
+	  "atlas": [
+		2,
+		0
+	  ],
+	  "scene_usage": "terrain"
+	},
+	{
+	  "id": 3,
+	  "name": "road_leaves",
+	  "atlas": [
+		3,
+		0
+	  ],
+	  "scene_usage": "terrain"
+	},
+	{
+	  "id": 4,
+	  "name": "road_edge_north",
+	  "atlas": [
+		0,
+		1
+	  ],
+	  "scene_usage": "terrain"
+	},
+	{
+	  "id": 5,
+	  "name": "road_edge_south",
+	  "atlas": [
+		1,
+		1
+	  ],
+	  "scene_usage": "terrain"
+	},
+	{
+	  "id": 6,
+	  "name": "road_bend",
+	  "atlas": [
+		2,
+		1
+	  ],
+	  "scene_usage": "terrain"
+	},
+	{
+	  "id": 7,
+	  "name": "road_junction",
+	  "atlas": [
+		3,
+		1
+	  ],
+	  "scene_usage": "terrain"
+	},
+	{
+	  "id": 8,
+	  "name": "autumn_shrub",
+	  "atlas": [
+		0,
+		2
+	  ],
+	  "scene_usage": "object_sprite"
+	},
+	{
+	  "id": 9,
+	  "name": "autumn_tree",
+	  "atlas": [
+		1,
+		2
+	  ],
+	  "scene_usage": "object_sprite"
+	},
+	{
+	  "id": 10,
+	  "name": "mossy_rock",
+	  "atlas": [
+		2,
+		2
+	  ],
+	  "scene_usage": "object_sprite"
+	},
+	{
+	  "id": 11,
+	  "name": "tree_stump",
+	  "atlas": [
+		3,
+		2
+	  ],
+	  "scene_usage": "object_sprite"
+	},
+	{
+	  "id": 12,
+	  "name": "fence_horizontal",
+	  "atlas": [
+		0,
+		3
+	  ],
+	  "scene_usage": "object_sprite"
+	},
+	{
+	  "id": 13,
+	  "name": "fence_vertical",
+	  "atlas": [
+		1,
+		3
+	  ],
+	  "scene_usage": "object_sprite"
+	},
+	{
+	  "id": 14,
+	  "name": "fence_corner",
+	  "atlas": [
+		2,
+		3
+	  ],
+	  "scene_usage": "object_sprite"
+	},
+	{
+	  "id": 15,
+	  "name": "entrance_sign",
+	  "atlas": [
+		3,
+		3
+	  ],
+	  "scene_usage": "object_sprite"
+	}
+  ]
+}

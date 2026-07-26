@@ -1,0 +1,13 @@
+{
+  "npc_id": "oren",
+  "display_name": "Oren",
+  "walk_speed": 34.0,
+  "entries": [
+    { "time": "00:00", "location": "oren_home", "activity": "sleep" },
+    { "time": "06:00", "location": "gate_oren", "activity": "guard_gate" },
+    { "time": "12:00", "location": "town_well", "activity": "midday_break" },
+    { "time": "13:00", "location": "gate_oren", "activity": "guard_gate" },
+    { "time": "19:00", "location": "tavern_porch", "activity": "evening_meal" },
+    { "time": "22:00", "location": "oren_home", "activity": "sleep" }
+  ]
+}

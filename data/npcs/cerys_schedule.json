@@ -1,0 +1,14 @@
+{
+  "npc_id": "cerys",
+  "display_name": "Cerys",
+  "walk_speed": 40.0,
+  "entries": [
+    { "time": "00:00", "location": "cerys_home", "activity": "sleep" },
+    { "time": "08:00", "location": "iven_house_gate", "activity": "deliver_letters" },
+    { "time": "10:00", "location": "town_square", "activity": "sort_deliveries" },
+    { "time": "12:00", "location": "bakery_door", "activity": "lunch" },
+    { "time": "13:00", "location": "bridge_north", "activity": "deliver_letters" },
+    { "time": "17:30", "location": "town_square", "activity": "finish_route" },
+    { "time": "20:30", "location": "cerys_home", "activity": "rest" }
+  ]
+}

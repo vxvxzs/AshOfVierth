@@ -1,0 +1,14 @@
+{
+  "npc_id": "elian",
+  "display_name": "Elian",
+  "walk_speed": 30.0,
+  "entries": [
+    { "time": "00:00", "location": "elian_home", "activity": "sleep" },
+    { "time": "04:30", "location": "bakery_oven", "activity": "bake_bread" },
+    { "time": "08:00", "location": "bakery_counter", "activity": "serve_customers" },
+    { "time": "12:30", "location": "market_bakery_stall", "activity": "sell_bread" },
+    { "time": "15:00", "location": "bakery_counter", "activity": "prepare_evening_loaves" },
+    { "time": "20:00", "location": "tavern_porch", "activity": "evening_meal" },
+    { "time": "21:30", "location": "elian_home", "activity": "sleep" }
+  ]
+}

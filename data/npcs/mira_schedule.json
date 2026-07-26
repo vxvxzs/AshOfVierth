@@ -1,0 +1,13 @@
+{
+  "npc_id": "mira",
+  "display_name": "Mira",
+  "walk_speed": 36.0,
+  "entries": [
+    { "time": "00:00", "location": "mira_home", "activity": "sleep" },
+    { "time": "06:30", "location": "gate_mira", "activity": "guard_gate" },
+    { "time": "11:30", "location": "bakery_door", "activity": "collect_rations" },
+    { "time": "12:15", "location": "gate_mira", "activity": "guard_gate" },
+    { "time": "18:30", "location": "town_well", "activity": "evening_chat" },
+    { "time": "21:30", "location": "mira_home", "activity": "sleep" }
+  ]
+}

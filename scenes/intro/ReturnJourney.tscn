@@ -1,0 +1,190 @@
+[gd_scene load_steps=13 format=3 uid="uid://cxu5alggw7hxu"]
+
+[ext_resource type="Script" uid="uid://cqxes88oivib0" path="res://scripts/intro/return_journey.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ch5rv2pr1d3v" path="res://assets/art/environment/forest_intro/forest_return_03.png" id="2_0m3d4"]
+[ext_resource type="PackedScene" uid="uid://cmglc5xiep1fb" path="res://scenes/player/Player.tscn" id="2_player"]
+[ext_resource type="Texture2D" uid="uid://d3phogpwryn5c" path="res://assets/art/environment/forest_intro/forest_return_01-cut.png" id="3_lfgve"]
+[ext_resource type="PackedScene" path="res://scenes/ui/NarrationOverlay.tscn" id="3_narration"]
+[ext_resource type="Texture2D" uid="uid://c0hfnnp8r8l2m" path="res://assets/art/environment/forest_intro/forest_return_02-cut.png" id="5_foreground_02"]
+[ext_resource type="VideoStream" uid="uid://82usuo8g40kw" path="res://assets/art/environment/forest_intro/forest_return_01_animated.ogv.ogv" id="6_animated_shot_01"]
+[ext_resource type="VideoStream" uid="uid://by56jpv6feock" path="res://assets/art/environment/forest_intro/forest_return_02_animated.ogv.ogv" id="7_animated_shot_02"]
+[ext_resource type="VideoStream" uid="uid://dn03pop2p5hbl" path="res://assets/art/environment/forest_intro/forest_return_03_animated.ogv.ogv" id="8_animated_shot_03"]
+
+[sub_resource type="Curve2D" id="Curve_shot_01"]
+_data = {
+"points": PackedVector2Array(0, 0, 27.5171, -10.7145, -67, 771, -62.89, 26.79, 62.89, -26.79, 179.827, 658.608, -69.3829, 35.6455, 69.3829, -35.6455, 366, 574, -57.95, 33.82, 57.95, -33.82, 545, 471, -45.733, 28.6446, 45.733, -28.6446, 671, 396, -49.02, 28.12, 49.02, -28.12, 785.7, 320.239, -40.337, 19.6154, 40.337, -19.6154, 929, 248, -23.18, 11.59, 23.18, -11.59, 998, 217, -13.68, 11.02, 13.68, -11.02, 1051, 187, 2.85, 8.93, -2.85, -8.93, 1070, 159, 17.29, 6.08, -17.29, -6.08, 1036, 140, 10.83, 2.47, 0, 0, 979, 127)
+}
+point_count = 12
+
+[sub_resource type="Curve2D" id="Curve_shot_02"]
+_data = {
+"points": PackedVector2Array(0, 0, -19.95, -8.74, 1018, 698, 43.51, 20.9, -43.51, -20.9, 913, 652, 45.03, 19.57, -45.03, -19.57, 789, 588, 45.03, 16.15, -45.03, -16.15, 676, 549, 22.61, 26.03, -22.61, -26.03, 552, 503, -0.38, 30.02, 0.38, -30.02, 557, 412, 6.46, 23.56, -6.46, -23.56, 554, 345, 16.91, 19.76, -16.91, -19.76, 523, 288, 24.89, 16.15, -24.89, -16.15, 465, 241, 27.93, 12.54, -27.93, -12.54, 392, 203, 35.34, 22.8, -35.34, -22.8, 318, 175, 21.28, 17.48, 0, 0, 206, 83)
+}
+point_count = 12
+
+[sub_resource type="Curve2D" id="Curve_shot_03"]
+_data = {
+"points": PackedVector2Array(0, 0, 26.79, -11.02, 235, 715, -44.65, 24.89, 44.65, -24.89, 376, 657, -45.22, 27.55, 45.22, -27.55, 470, 584, -52.63, 26.98, 52.63, -26.98, 614, 512, -47.5, 22.23, 47.5, -22.23, 747, 442, -35.34, 19.19, 35.34, -19.19, 864, 395, -18.81, 19.95, 18.81, -19.95, 923, 346, 0, 17.67, 0, -17.67, 938, 295, -0.73, 12.58, 0.73, -12.58, 939, 247, -5.51, 11.4, 5.51, -11.4, 946, 208, -11.21, 5.13, 11.21, -5.13, 962, 188, -7.41, 1.71, 7.41, -1.71, 989, 181, -5.89, 1.33, 5.89, -1.33, 1001, 179, -3.61, 0.95, 0, 0, 1020, 174)
+}
+point_count = 14
+
+[node name="ReturnJourney" type="Node"]
+script = ExtResource("1_script")
+editor_preview_shot = 2
+editor_preview_progress = 0.0
+path_handle_strength = 0.19
+shot_1_middle_at = 0.22
+shot_1_end_at = 0.92
+shot_1_end_direction = 8
+shot_2_middle_at = 0.45
+shot_2_middle_direction = 1
+shot_2_end_at = 0.63
+shot_3_middle_at = 0.79
+shot_3_middle_direction = 1
+shot_3_end_at = 0.92
+start_scale = 2.3
+end_scale = 1.0
+shot_2_start_scale = 2.0
+shot_2_end_scale = 1.5
+shot_3_start_scale = 2.5
+shot_3_end_scale = 0.8
+
+[node name="CinematicStage" type="Node2D" parent="."]
+
+[node name="Background" type="TextureRect" parent="CinematicStage"]
+z_index = -2
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("2_0m3d4")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="AnimatedBackgroundShot01" type="VideoStreamPlayer" parent="CinematicStage"]
+visible = false
+z_index = -1
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+stream = ExtResource("6_animated_shot_01")
+expand = true
+loop = true
+
+[node name="AnimatedBackgroundShot02" type="VideoStreamPlayer" parent="CinematicStage"]
+visible = false
+z_index = -1
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+stream = ExtResource("7_animated_shot_02")
+expand = true
+loop = true
+
+[node name="AnimatedBackgroundShot03" type="VideoStreamPlayer" parent="CinematicStage"]
+visible = false
+z_index = -1
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+stream = ExtResource("8_animated_shot_03")
+expand = true
+loop = true
+
+[node name="ForegroundShot01" type="TextureRect" parent="CinematicStage"]
+visible = false
+z_index = 100
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("3_lfgve")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ForegroundShot02" type="TextureRect" parent="CinematicStage"]
+visible = false
+z_index = 100
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("5_foreground_02")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ShotPaths" type="Node2D" parent="CinematicStage"]
+
+[node name="ShotPath01" type="Path2D" parent="CinematicStage/ShotPaths"]
+curve = SubResource("Curve_shot_01")
+
+[node name="Follow" type="PathFollow2D" parent="CinematicStage/ShotPaths/ShotPath01"]
+position = Vector2(471.866, 514.633)
+progress = 597.173
+rotates = false
+
+[node name="Player" parent="CinematicStage/ShotPaths/ShotPath01/Follow" instance=ExtResource("2_player")]
+z_index = 10
+position = Vector2(-236.866, 200.367)
+scale = Vector2(2.5, 2.5)
+
+[node name="ShotPath02" type="Path2D" parent="CinematicStage/ShotPaths"]
+curve = SubResource("Curve_shot_02")
+
+[node name="Follow" type="PathFollow2D" parent="CinematicStage/ShotPaths/ShotPath02"]
+position = Vector2(359.273, 193.206)
+progress = 926.964
+rotates = false
+
+[node name="ShotPath03" type="Path2D" parent="CinematicStage/ShotPaths"]
+curve = SubResource("Curve_shot_03")
+
+[node name="Follow" type="PathFollow2D" parent="CinematicStage/ShotPaths/ShotPath03"]
+position = Vector2(235, 715)
+rotates = false
+
+[node name="Foreground" type="Node2D" parent="CinematicStage"]
+z_index = 10
+
+[node name="CinematicCamera" type="Camera2D" parent="."]
+enabled = false
+zoom = Vector2(1.1, 1.1)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 720
+
+[node name="NarrationOverlay" parent="." instance=ExtResource("3_narration")]
+
+[node name="CinematicUI" type="CanvasLayer" parent="."]
+layer = 12
+visible = false
+
+[node name="LocationLabel" type="Label" parent="CinematicUI"]
+offset_left = 42.0
+offset_top = 36.0
+offset_right = 350.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.91, 0.84, 0.62, 1)
+theme_override_font_sizes/font_size = 18
+text = "ALDER PASS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndingLabel" type="Label" parent="CinematicUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.89, 0.84, 0.69, 1)
+theme_override_font_sizes/font_size = 26
+text = "VIERTH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fade" type="ColorRect" parent="CinematicUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

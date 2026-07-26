@@ -1,0 +1,72 @@
+{
+  "map_size": [30, 20],
+  "tile_size": 32,
+  "road_half_width": 2,
+  "road_centers": [
+    16, 16, 16, 15, 14,
+    13, 12, 12, 13, 14,
+    15, 15, 14, 13, 12,
+    12, 13, 14, 15, 15
+  ],
+  "forest_seed": 417,
+  "forest_density": 0.42,
+  "player_spawn": [15.5, 18.0],
+  "camera": {
+    "deadzone_size": [88.0, 56.0],
+    "follow_speed": 9.0,
+    "transition_duration": 0.55,
+    "zoom": 2.0
+  },
+  "camera_zones": [
+    {
+      "id": "southern_road",
+      "trigger": [0.0, 220.0, 960.0, 420.0],
+      "bounds": [0.0, 0.0, 960.0, 640.0],
+      "focus": [480.0, 460.0]
+    },
+    {
+      "id": "vierth_gate",
+      "trigger": [0.0, 0.0, 960.0, 220.0],
+      "bounds": [0.0, 0.0, 960.0, 360.0],
+      "focus": [480.0, 180.0]
+    }
+  ],
+  "city_gate": {
+    "origin": [15.0, 3.45],
+    "transition_rect": [468.0, 0.0, 120.0, 54.0],
+    "target_scene": "res://scenes/levels/VierthTown.tscn"
+  },
+  "landmarks": [
+    [19, 4, 15],
+    [8, 8, 11],
+    [21, 11, 10],
+    [7, 15, 11],
+    [22, 17, 8]
+  ],
+  "npcs": [
+    {
+      "name": "Oren",
+      "display_name": "Gatekeeper Oren",
+      "position": [13.55, 4.65],
+      "color": "657d69",
+      "companion": "Mira",
+      "ambient_phase": 0.8,
+      "ambient_lines": [
+        "The south road shifted again.",
+        "That marker was on the other side yesterday."
+      ]
+    },
+    {
+      "name": "Mira",
+      "display_name": "Mira",
+      "position": [18.45, 4.65],
+      "color": "8f6757",
+      "companion": "Oren",
+      "ambient_phase": 3.8,
+      "ambient_lines": [
+        "You say that every morning.",
+        "Maybe the marker remembers better than you."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "npc_id": "alda",
+  "display_name": "Alda",
+  "walk_speed": 33.0,
+  "entries": [
+    { "time": "00:00", "location": "alda_home", "activity": "sleep" },
+    { "time": "07:00", "location": "river_bank", "activity": "wash_linen" },
+    { "time": "10:00", "location": "market_cloth_stall", "activity": "sell_cloth" },
+    { "time": "14:00", "location": "town_well", "activity": "fetch_water" },
+    { "time": "15:00", "location": "market_cloth_stall", "activity": "sell_cloth" },
+    { "time": "19:30", "location": "alda_home", "activity": "rest" }
+  ]
+}

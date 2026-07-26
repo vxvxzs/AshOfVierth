@@ -16,6 +16,7 @@ attack_range = 66.0
 attack_reach = 34.0
 telegraph_duration = 0.34
 recovery_duration = 0.38
+display_name = "Ash Hound"
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 2

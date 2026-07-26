@@ -1,0 +1,1226 @@
+[gd_scene load_steps=91 format=3 uid="uid://c1egl85gnbgyj"]
+
+[ext_resource type="Script" uid="uid://c7hlewmychhhb" path="res://scripts/levels/vierth_entrance.gd" id="1_x0n80"]
+[ext_resource type="Texture2D" uid="uid://jqa7wa4smwdu" path="res://assets/tilesets/vierth_ground.png" id="2_2elwh"]
+[ext_resource type="Texture2D" uid="uid://l5pej3aqcd6u" path="res://assets/tilesets/vierth_objects/tree_stump.png" id="3_jdr6d"]
+[ext_resource type="Shader" uid="uid://dm6rrlbaqf348" path="res://shaders/foliage_wind.gdshader" id="4_gax4u"]
+[ext_resource type="Texture2D" uid="uid://cqr1xqwkfvhpe" path="res://assets/tilesets/vierth_objects/autumn_shrub.png" id="5_y2vwy"]
+[ext_resource type="Texture2D" uid="uid://0mlhghuumv6r" path="res://assets/tilesets/vierth_objects/mossy_rock.png" id="6_pe8s8"]
+[ext_resource type="Texture2D" uid="uid://dfji2wv35bim3" path="res://assets/tilesets/vierth_objects/autumn_tree.png" id="7_ik2dc"]
+[ext_resource type="Texture2D" uid="uid://dgm4p061squca" path="res://assets/environment/entrance/vierth_stone_gate.svg" id="8_h52uj"]
+[ext_resource type="Texture2D" uid="uid://de1njtqhhen1s" path="res://assets/tilesets/vierth_objects/entrance_sign.png" id="9_rurtb"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/VierthGateNPC.tscn" id="10_p4hl8"]
+[ext_resource type="Script" uid="uid://dehmwy60bcvsr" path="res://scripts/camera/hld_camera_2d.gd" id="12_jlmkk"]
+[ext_resource type="Script" uid="uid://ctsc07wyesb40" path="res://scripts/camera/camera_zone_2d.gd" id="13_glib8"]
+[ext_resource type="Script" uid="uid://ctunufsb0qdit" path="res://scripts/world/gate_transition.gd" id="14_3gal6"]
+[ext_resource type="Texture2D" uid="uid://b63i0l16q0ygj" path="res://assets/environment/entrance/golden_leaf.svg" id="15_b7ib1"]
+[ext_resource type="PackedScene" path="res://scenes/dialogue/DialogueUI.tscn" id="16_8pado"]
+[ext_resource type="PackedScene" path="res://scenes/ui/MobileControls.tscn" id="18_14erw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8m3e5"]
+size = Vector2(28, 18)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vj55u"]
+shader = ExtResource("4_gax4u")
+shader_parameter/wind_strength = 1.15
+shader_parameter/wind_speed = 1.15
+shader_parameter/gust_strength = 0.35
+shader_parameter/anchored_portion = 0.28
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwfrh"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcwoj"]
+size = Vector2(42, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttgij"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u374j"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtwvl"]
+size = Vector2(42, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv0o2"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcmdr"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1x60"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sf5y"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32im3"]
+size = Vector2(42, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88nb0"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8177"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klnb5"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrs0k"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3phv2"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpr71"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vyhm"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ya53g"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mlsj"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idl8s"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ks4q"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8v3a8"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fch8j"]
+size = Vector2(42, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m757d"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8gwn"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie4yb"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufsdr"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks2nf"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd0si"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_di0pc"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p3tl"]
+size = Vector2(42, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6h33d"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bphxe"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84gnx"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aughd"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p30s5"]
+size = Vector2(42, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dx3h8"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aim7q"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j0bm"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylul7"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ge7j"]
+size = Vector2(42, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7n8l"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gl5o"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gc1r"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcl0s"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvntd"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6n5s"]
+size = Vector2(42, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr1jd"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0nii"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypicn"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66s66"]
+size = Vector2(42, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl0u6"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d43jg"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y631w"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xeek"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmo7r"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oc5bp"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3btb1"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klvvl"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud2s6"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d04p6"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipv5t"]
+size = Vector2(440, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65d85"]
+size = Vector2(340, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykr8i"]
+size = Vector2(18, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogcxp"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g11r7"]
+size = Vector2(42, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxr3x"]
+size = Vector2(28, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqmey"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7ln4"]
+size = Vector2(960, 420)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4m4fo"]
+size = Vector2(960, 220)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj7p7"]
+size = Vector2(120, 54)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fuv7e"]
+emission_shape = 3
+emission_box_extents = Vector3(480, 12, 1)
+direction = Vector3(-0.18, 1, 0)
+spread = 24.0
+initial_velocity_min = 12.0
+initial_velocity_max = 24.0
+angular_velocity_min = -75.0
+angular_velocity_max = 75.0
+gravity = Vector3(7, 5, 0)
+scale_min = 0.75
+scale_max = 1.35
+
+[node name="VierthEntrance" type="Node2D"]
+script = ExtResource("1_x0n80")
+
+[node name="GroundLayer" type="Node2D" parent="."]
+z_index = -100
+
+[node name="ContinuousGround" type="Sprite2D" parent="GroundLayer"]
+texture_filter = 1
+texture = ExtResource("2_2elwh")
+centered = false
+
+[node name="World" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Stump_000" type="StaticBody2D" parent="World"]
+position = Vector2(27, 41)
+
+[node name="Sprite" type="Sprite2D" parent="World/Stump_000"]
+texture_filter = 1
+position = Vector2(0, -32)
+texture = ExtResource("3_jdr6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stump_000"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_8m3e5")
+
+[node name="Shrub_001" type="StaticBody2D" parent="World"]
+position = Vector2(94, 54)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_001"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_001"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_iwfrh")
+
+[node name="Rock_002" type="StaticBody2D" parent="World"]
+position = Vector2(224, 37)
+
+[node name="Sprite" type="Sprite2D" parent="World/Rock_002"]
+texture_filter = 1
+position = Vector2(0, -36)
+texture = ExtResource("6_pe8s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Rock_002"]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_xcwoj")
+
+[node name="Shrub_003" type="StaticBody2D" parent="World"]
+position = Vector2(716, 49)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_003"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_003"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_ttgij")
+
+[node name="Tree_004" type="StaticBody2D" parent="World"]
+position = Vector2(830, 36)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_004"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_004"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_u374j")
+
+[node name="Rock_005" type="StaticBody2D" parent="World"]
+position = Vector2(907, 30)
+
+[node name="Sprite" type="Sprite2D" parent="World/Rock_005"]
+texture_filter = 1
+position = Vector2(0, -36)
+texture = ExtResource("6_pe8s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Rock_005"]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_vtwvl")
+
+[node name="Stump_006" type="StaticBody2D" parent="World"]
+position = Vector2(18, 89)
+
+[node name="Sprite" type="Sprite2D" parent="World/Stump_006"]
+texture_filter = 1
+position = Vector2(0, -32)
+texture = ExtResource("3_jdr6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stump_006"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_hv0o2")
+
+[node name="Tree_007" type="StaticBody2D" parent="World"]
+position = Vector2(89, 107)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_007"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_007"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_xcmdr")
+
+[node name="Tree_008" type="StaticBody2D" parent="World"]
+position = Vector2(637, 97)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_008"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_008"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_t1x60")
+
+[node name="Tree_009" type="StaticBody2D" parent="World"]
+position = Vector2(904, 96)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_009"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_009"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_8sf5y")
+
+[node name="Rock_010" type="StaticBody2D" parent="World"]
+position = Vector2(24, 169)
+
+[node name="Sprite" type="Sprite2D" parent="World/Rock_010"]
+texture_filter = 1
+position = Vector2(0, -36)
+texture = ExtResource("6_pe8s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Rock_010"]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_32im3")
+
+[node name="Tree_011" type="StaticBody2D" parent="World"]
+position = Vector2(98, 171)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_011"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_011"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_88nb0")
+
+[node name="Tree_012" type="StaticBody2D" parent="World"]
+position = Vector2(163, 160)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_012"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_012"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_w8177")
+
+[node name="Tree_013" type="StaticBody2D" parent="World"]
+position = Vector2(279, 156)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_013"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_013"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_klnb5")
+
+[node name="Stump_014" type="StaticBody2D" parent="World"]
+position = Vector2(606, 164)
+
+[node name="Sprite" type="Sprite2D" parent="World/Stump_014"]
+texture_filter = 1
+position = Vector2(0, -32)
+texture = ExtResource("3_jdr6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stump_014"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_lrs0k")
+
+[node name="Tree_015" type="StaticBody2D" parent="World"]
+position = Vector2(658, 167)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_015"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_015"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_3phv2")
+
+[node name="Tree_016" type="StaticBody2D" parent="World"]
+position = Vector2(857, 146)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_016"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_016"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_vpr71")
+
+[node name="Tree_017" type="StaticBody2D" parent="World"]
+position = Vector2(26, 217)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_017"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_017"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_6vyhm")
+
+[node name="Tree_018" type="StaticBody2D" parent="World"]
+position = Vector2(99, 225)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_018"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_018"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_ya53g")
+
+[node name="Tree_019" type="StaticBody2D" parent="World"]
+position = Vector2(168, 225)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_019"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_019"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_7mlsj")
+
+[node name="Tree_020" type="StaticBody2D" parent="World"]
+position = Vector2(207, 213)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_020"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_020"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_idl8s")
+
+[node name="Shrub_021" type="StaticBody2D" parent="World"]
+position = Vector2(524, 221)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_021"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_021"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_6ks4q")
+
+[node name="Tree_022" type="StaticBody2D" parent="World"]
+position = Vector2(663, 211)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_022"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_022"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_8v3a8")
+
+[node name="Rock_023" type="StaticBody2D" parent="World"]
+position = Vector2(722, 223)
+
+[node name="Sprite" type="Sprite2D" parent="World/Rock_023"]
+texture_filter = 1
+position = Vector2(0, -36)
+texture = ExtResource("6_pe8s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Rock_023"]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_fch8j")
+
+[node name="Tree_024" type="StaticBody2D" parent="World"]
+position = Vector2(833, 223)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_024"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_024"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_m757d")
+
+[node name="Stump_025" type="StaticBody2D" parent="World"]
+position = Vector2(887, 218)
+
+[node name="Sprite" type="Sprite2D" parent="World/Stump_025"]
+texture_filter = 1
+position = Vector2(0, -32)
+texture = ExtResource("3_jdr6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stump_025"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_b8gwn")
+
+[node name="Stump_026" type="StaticBody2D" parent="World"]
+position = Vector2(80, 277)
+
+[node name="Sprite" type="Sprite2D" parent="World/Stump_026"]
+texture_filter = 1
+position = Vector2(0, -32)
+texture = ExtResource("3_jdr6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stump_026"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_ie4yb")
+
+[node name="Tree_027" type="StaticBody2D" parent="World"]
+position = Vector2(156, 284)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_027"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_027"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_ufsdr")
+
+[node name="Tree_028" type="StaticBody2D" parent="World"]
+position = Vector2(220, 284)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_028"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_028"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_ks2nf")
+
+[node name="Stump_029" type="StaticBody2D" parent="World"]
+position = Vector2(269, 269)
+
+[node name="Sprite" type="Sprite2D" parent="World/Stump_029"]
+texture_filter = 1
+position = Vector2(0, -32)
+texture = ExtResource("3_jdr6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stump_029"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_nd0si")
+
+[node name="Shrub_030" type="StaticBody2D" parent="World"]
+position = Vector2(576, 263)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_030"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_030"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_di0pc")
+
+[node name="Rock_031" type="StaticBody2D" parent="World"]
+position = Vector2(915, 265)
+
+[node name="Sprite" type="Sprite2D" parent="World/Rock_031"]
+texture_filter = 1
+position = Vector2(0, -36)
+texture = ExtResource("6_pe8s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Rock_031"]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_5p3tl")
+
+[node name="Tree_032" type="StaticBody2D" parent="World"]
+position = Vector2(47, 321)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_032"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_032"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_6h33d")
+
+[node name="Tree_033" type="StaticBody2D" parent="World"]
+position = Vector2(86, 335)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_033"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_033"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_bphxe")
+
+[node name="Shrub_034" type="StaticBody2D" parent="World"]
+position = Vector2(273, 325)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_034"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_034"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_84gnx")
+
+[node name="Tree_035" type="StaticBody2D" parent="World"]
+position = Vector2(838, 323)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_035"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_035"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_aughd")
+
+[node name="Rock_036" type="StaticBody2D" parent="World"]
+position = Vector2(915, 336)
+
+[node name="Sprite" type="Sprite2D" parent="World/Rock_036"]
+texture_filter = 1
+position = Vector2(0, -36)
+texture = ExtResource("6_pe8s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Rock_036"]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_p30s5")
+
+[node name="Shrub_037" type="StaticBody2D" parent="World"]
+position = Vector2(36, 393)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_037"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_037"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_dx3h8")
+
+[node name="Tree_038" type="StaticBody2D" parent="World"]
+position = Vector2(103, 399)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_038"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_038"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_aim7q")
+
+[node name="Shrub_039" type="StaticBody2D" parent="World"]
+position = Vector2(157, 393)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_039"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_039"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_1j0bm")
+
+[node name="Tree_040" type="StaticBody2D" parent="World"]
+position = Vector2(223, 390)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_040"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_040"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_ylul7")
+
+[node name="Rock_041" type="StaticBody2D" parent="World"]
+position = Vector2(707, 389)
+
+[node name="Sprite" type="Sprite2D" parent="World/Rock_041"]
+texture_filter = 1
+position = Vector2(0, -36)
+texture = ExtResource("6_pe8s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Rock_041"]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_4ge7j")
+
+[node name="Shrub_042" type="StaticBody2D" parent="World"]
+position = Vector2(898, 381)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_042"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_042"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_o7n8l")
+
+[node name="Tree_043" type="StaticBody2D" parent="World"]
+position = Vector2(50, 456)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_043"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_043"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_1gl5o")
+
+[node name="Tree_044" type="StaticBody2D" parent="World"]
+position = Vector2(171, 447)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_044"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_044"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_4gc1r")
+
+[node name="Tree_045" type="StaticBody2D" parent="World"]
+position = Vector2(225, 459)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_045"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_045"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_vcl0s")
+
+[node name="Shrub_046" type="StaticBody2D" parent="World"]
+position = Vector2(81, 508)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_046"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_046"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_hvntd")
+
+[node name="Rock_047" type="StaticBody2D" parent="World"]
+position = Vector2(269, 499)
+
+[node name="Sprite" type="Sprite2D" parent="World/Rock_047"]
+texture_filter = 1
+position = Vector2(0, -36)
+texture = ExtResource("6_pe8s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Rock_047"]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_q6n5s")
+
+[node name="Shrub_048" type="StaticBody2D" parent="World"]
+position = Vector2(903, 513)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_048"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_048"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_nr1jd")
+
+[node name="Shrub_049" type="StaticBody2D" parent="World"]
+position = Vector2(41, 556)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_049"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_049"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_r0nii")
+
+[node name="Tree_050" type="StaticBody2D" parent="World"]
+position = Vector2(87, 560)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_050"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_050"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_ypicn")
+
+[node name="Rock_051" type="StaticBody2D" parent="World"]
+position = Vector2(282, 574)
+
+[node name="Sprite" type="Sprite2D" parent="World/Rock_051"]
+texture_filter = 1
+position = Vector2(0, -36)
+texture = ExtResource("6_pe8s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Rock_051"]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_66s66")
+
+[node name="Shrub_052" type="StaticBody2D" parent="World"]
+position = Vector2(768, 562)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_052"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_052"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_dl0u6")
+
+[node name="Stump_053" type="StaticBody2D" parent="World"]
+position = Vector2(847, 565)
+
+[node name="Sprite" type="Sprite2D" parent="World/Stump_053"]
+texture_filter = 1
+position = Vector2(0, -32)
+texture = ExtResource("3_jdr6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stump_053"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_d43jg")
+
+[node name="Shrub_054" type="StaticBody2D" parent="World"]
+position = Vector2(21, 624)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_054"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_054"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_y631w")
+
+[node name="Stump_055" type="StaticBody2D" parent="World"]
+position = Vector2(93, 618)
+
+[node name="Sprite" type="Sprite2D" parent="World/Stump_055"]
+texture_filter = 1
+position = Vector2(0, -32)
+texture = ExtResource("3_jdr6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stump_055"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_3xeek")
+
+[node name="Shrub_056" type="StaticBody2D" parent="World"]
+position = Vector2(150, 633)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_056"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_056"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_dmo7r")
+
+[node name="Stump_057" type="StaticBody2D" parent="World"]
+position = Vector2(205, 631)
+
+[node name="Sprite" type="Sprite2D" parent="World/Stump_057"]
+texture_filter = 1
+position = Vector2(0, -32)
+texture = ExtResource("3_jdr6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stump_057"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_oc5bp")
+
+[node name="Shrub_058" type="StaticBody2D" parent="World"]
+position = Vector2(354, 628)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_058"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_058"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_3btb1")
+
+[node name="Tree_059" type="StaticBody2D" parent="World"]
+position = Vector2(711, 620)
+
+[node name="Sprite" type="Sprite2D" parent="World/Tree_059"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -64)
+texture = ExtResource("7_ik2dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Tree_059"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_klvvl")
+
+[node name="Shrub_060" type="StaticBody2D" parent="World"]
+position = Vector2(855, 613)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_060"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_060"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_ud2s6")
+
+[node name="Shrub_061" type="StaticBody2D" parent="World"]
+position = Vector2(895, 633)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_061"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_061"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_d04p6")
+
+[node name="VierthCityGate" type="Node2D" parent="World"]
+position = Vector2(480, 110)
+
+[node name="StoneWallAndGate" type="Sprite2D" parent="World/VierthCityGate"]
+texture_filter = 1
+position = Vector2(-480, -110)
+texture = ExtResource("8_h52uj")
+centered = false
+
+[node name="WestWallCollision" type="StaticBody2D" parent="World/VierthCityGate"]
+position = Vector2(-260, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/VierthCityGate/WestWallCollision"]
+shape = SubResource("RectangleShape2D_ipv5t")
+
+[node name="EastWallCollision" type="StaticBody2D" parent="World/VierthCityGate"]
+position = Vector2(310, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/VierthCityGate/EastWallCollision"]
+shape = SubResource("RectangleShape2D_65d85")
+
+[node name="EntranceSign_000" type="StaticBody2D" parent="World"]
+position = Vector2(624, 160)
+
+[node name="Sprite" type="Sprite2D" parent="World/EntranceSign_000"]
+texture_filter = 1
+position = Vector2(0, -48)
+texture = ExtResource("9_rurtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/EntranceSign_000"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_ykr8i")
+
+[node name="Stump_001" type="StaticBody2D" parent="World"]
+position = Vector2(272, 288)
+
+[node name="Sprite" type="Sprite2D" parent="World/Stump_001"]
+texture_filter = 1
+position = Vector2(0, -32)
+texture = ExtResource("3_jdr6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stump_001"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_ogcxp")
+
+[node name="@StaticBody2D@2" type="StaticBody2D" parent="World"]
+position = Vector2(688, 384)
+
+[node name="Sprite" type="Sprite2D" parent="World/@StaticBody2D@2"]
+texture_filter = 1
+position = Vector2(0, -36)
+texture = ExtResource("6_pe8s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/@StaticBody2D@2"]
+position = Vector2(0, -12.5)
+shape = SubResource("RectangleShape2D_g11r7")
+
+[node name="Stump_003" type="StaticBody2D" parent="World"]
+position = Vector2(240, 512)
+
+[node name="Sprite" type="Sprite2D" parent="World/Stump_003"]
+texture_filter = 1
+position = Vector2(0, -32)
+texture = ExtResource("3_jdr6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Stump_003"]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_dxr3x")
+
+[node name="Shrub_004" type="StaticBody2D" parent="World"]
+position = Vector2(720, 576)
+
+[node name="Sprite" type="Sprite2D" parent="World/Shrub_004"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vj55u")
+position = Vector2(0, -32)
+texture = ExtResource("5_y2vwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Shrub_004"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_dqmey")
+
+[node name="Oren" parent="World" instance=ExtResource("10_p4hl8")]
+position = Vector2(434, 149)
+display_name = "Gatekeeper Oren"
+companion_path = NodePath("../Mira")
+ambient_lines = PackedStringArray("The south road shifted again.", "That marker was on the other side yesterday.")
+ambient_phase = 0.8
+
+[node name="Mira" parent="World" instance=ExtResource("10_p4hl8")]
+position = Vector2(590, 149)
+display_name = "Mira"
+robe_color = Color(0.560784, 0.403922, 0.341176, 1)
+companion_path = NodePath("../Oren")
+ambient_lines = PackedStringArray("You say that every morning.", "Maybe the marker remembers better than you.")
+ambient_phase = 3.8
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(496, 576)
+
+[node name="HLDCamera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 960
+limit_bottom = 640
+script = ExtResource("12_jlmkk")
+target_path = NodePath("../World/Iven")
+
+[node name="SouthernRoadCameraZone" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("13_glib8")
+zone_id = &"southern_road"
+transition_focus = Vector2(480, 460)
+
+[node name="Trigger" type="CollisionShape2D" parent="SouthernRoadCameraZone"]
+position = Vector2(480, 430)
+shape = SubResource("RectangleShape2D_m7ln4")
+
+[node name="VierthGateCameraZone" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("13_glib8")
+zone_id = &"vierth_gate"
+camera_bounds = Rect2(0, 0, 960, 360)
+transition_focus = Vector2(480, 180)
+
+[node name="Trigger" type="CollisionShape2D" parent="VierthGateCameraZone"]
+position = Vector2(480, 110)
+shape = SubResource("RectangleShape2D_4m4fo")
+
+[node name="TownGateTransition" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("14_3gal6")
+
+[node name="Trigger" type="CollisionShape2D" parent="TownGateTransition"]
+position = Vector2(528, 27)
+shape = SubResource("RectangleShape2D_mj7p7")
+
+[node name="EnvironmentFX" type="Node2D" parent="."]
+
+[node name="GoldenLeaves" type="GPUParticles2D" parent="EnvironmentFX"]
+z_index = 40
+texture_filter = 1
+position = Vector2(480, -12)
+amount = 76
+texture = ExtResource("15_b7ib1")
+lifetime = 10.0
+preprocess = 10.0
+randomness = 0.65
+visibility_rect = Rect2(-480, -64, 960, 768)
+process_material = SubResource("ParticleProcessMaterial_fuv7e")
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="LocationLabel" type="Label" parent="Interface"]
+offset_left = 22.0
+offset_top = 18.0
+offset_right = 22.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0.913725, 0.85098, 0.705882, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 14
+text = "VIERTH - SOUTHERN ENTRANCE"
+
+[node name="DialoguePanel" parent="." instance=ExtResource("16_8pado")]
+
+[node name="MobileControls" parent="." instance=ExtResource("18_14erw")]

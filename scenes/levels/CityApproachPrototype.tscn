@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/city_approach_prototype.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://cmglc5xiep1fb" path="res://scenes/player/Player.tscn" id="2_player"]
+
+[node name="CityApproachPrototype" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+z_index = 10
+position = Vector2(640, 560)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="UI"]
+offset_left = 38.0
+offset_top = 32.0
+offset_right = 500.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0.91, 0.84, 0.62, 1)
+theme_override_font_sizes/font_size = 23
+text = "VIERTH — NORTH GATE"
+
+[node name="PrototypeNote" type="Label" parent="UI"]
+offset_left = 38.0
+offset_top = 66.0
+offset_right = 630.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.74, 0.78, 0.76, 1)
+theme_override_font_sizes/font_size = 15
+text = "City approach prototype — environment art comes next."

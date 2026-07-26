@@ -1,0 +1,214 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_script"]
+[ext_resource type="Theme" path="res://assets/ui/ornate/ornate_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" path="res://assets/ui/ornate/divider.png" id="3_divider"]
+[ext_resource type="FontFile" path="res://assets/fonts/pirata_one/PirataOne-Regular.ttf" id="4_title_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_backdrop"]
+bg_color = Color(0.018, 0.016, 0.015, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.16, 0.12, 0.09, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_backdrop")
+
+[node name="WarmVignette" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.18, 0.105, 0.045, 0.09)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuFrame" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(660, 640)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/MenuFrame"]
+layout_mode = 2
+theme_override_constants/margin_left = 76
+theme_override_constants/margin_top = 68
+theme_override_constants/margin_right = 76
+theme_override_constants/margin_bottom = 62
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MenuFrame/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="CenterContainer/MenuFrame/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.84, 0.64, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("4_title_font")
+theme_override_font_sizes/font_size = 52
+text = "ASH OF VIERTH"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="CenterContainer/MenuFrame/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.61, 0.54, 0.43, 1)
+theme_override_font_sizes/font_size = 16
+text = "FIRST FRACTURE"
+horizontal_alignment = 1
+
+[node name="Divider" type="TextureRect" parent="CenterContainer/MenuFrame/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+texture_filter = 1
+texture = ExtResource("3_divider")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Spacer" type="Control" parent="CenterContainer/MenuFrame/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="NewGame" type="Button" parent="CenterContainer/MenuFrame/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+text = "GRAJ"
+
+[node name="Settings" type="Button" parent="CenterContainer/MenuFrame/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+text = "USTAWIENIA"
+
+[node name="Credits" type="Button" parent="CenterContainer/MenuFrame/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+text = "TWÓRCY"
+
+[node name="Quit" type="Button" parent="CenterContainer/MenuFrame/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+text = "WYJŚCIE"
+
+[node name="Status" type="Label" parent="CenterContainer/MenuFrame/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.57, 0.46, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ModalDim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+color = Color(0, 0, 0, 0.76)
+
+[node name="ModalCenter" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ModalFrame" type="PanelContainer" parent="ModalCenter"]
+custom_minimum_size = Vector2(640, 430)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="ModalCenter/ModalFrame"]
+layout_mode = 2
+theme_override_constants/margin_left = 68
+theme_override_constants/margin_top = 58
+theme_override_constants/margin_right = 68
+theme_override_constants/margin_bottom = 52
+
+[node name="Content" type="VBoxContainer" parent="ModalCenter/ModalFrame/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="ModalTitle" type="Label" parent="ModalCenter/ModalFrame/Margin/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.84, 0.64, 1)
+theme_override_fonts/font = ExtResource("4_title_font")
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+
+[node name="ModalBody" type="Label" parent="ModalCenter/ModalFrame/Margin/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 116)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.84, 0.79, 0.69, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VolumeRow" type="HBoxContainer" parent="ModalCenter/ModalFrame/Margin/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="ModalCenter/ModalFrame/Margin/Content/VolumeRow"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+text = "GŁOŚNOŚĆ"
+vertical_alignment = 1
+
+[node name="MasterVolume" type="HSlider" parent="ModalCenter/ModalFrame/Margin/Content/VolumeRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 54)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+value = 80.0
+
+[node name="ModalBack" type="Button" parent="ModalCenter/ModalFrame/Margin/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "POWRÓT"

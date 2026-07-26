@@ -1,0 +1,261 @@
+{
+  "id": "vierth_gate",
+  "entries": [
+    {
+      "conditions": {
+        "memory_equals": {
+          "gatekeepers.return_reason": "missed_vierth"
+        }
+      },
+      "start": "remembered",
+      "nodes": {
+        "remembered": {
+          "speaker": "Mira",
+          "portrait": "res://assets/ui/portraits/mira.svg",
+          "text": "Still glad to be home, Iven? The gate has been less certain about you than we have.",
+          "next": "oren"
+        },
+        "oren": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "Let him keep the answer he gave. Vierth remembers promises longer than people do.",
+          "next": ""
+        }
+      }
+    },
+    {
+      "conditions": {
+        "memory_equals": {
+          "gatekeepers.return_reason": "nowhere_else"
+        }
+      },
+      "start": "remembered",
+      "nodes": {
+        "remembered": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "You said there was nowhere else to go. Be careful. Vierth has begun taking words like invitations.",
+          "next": "mira"
+        },
+        "mira": {
+          "speaker": "Mira",
+          "portrait": "res://assets/ui/portraits/mira.svg",
+          "text": "What he means is that you still have a place here. Even if the streets need reminding.",
+          "next": ""
+        }
+      }
+    },
+    {
+      "conditions": {
+        "memory_equals": {
+          "gatekeepers.return_reason": "unfinished_business"
+        }
+      },
+      "start": "remembered",
+      "nodes": {
+        "remembered": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "Whatever you came to settle, the Ash Well has been awake since you crossed the southern marker.",
+          "next": "mira"
+        },
+        "mira": {
+          "speaker": "Mira",
+          "portrait": "res://assets/ui/portraits/mira.svg",
+          "text": "And Oren has been practising that warning since breakfast. Go carefully, Iven.",
+          "next": ""
+        }
+      }
+    },
+    {
+      "conditions": {
+        "min_deaths": 1
+      },
+      "start": "oren_deja_vu",
+      "nodes": {
+        "oren_deja_vu": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "You took the southern road again. I could have sworn I watched you arrive before dawn.",
+          "next": "mira_dreams"
+        },
+        "mira_dreams": {
+          "speaker": "Mira",
+          "portrait": "res://assets/ui/portraits/mira.svg",
+          "text": "Don't start with that. Half the town is dreaming things that never happened.",
+          "next": "return_question"
+        },
+        "return_question": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "Then tell me something simpler, Iven. Why did you come back?",
+          "choices": [
+            {
+              "id": "missed_vierth",
+              "text": "I missed Vierth.",
+              "memory": {
+                "npc": "gatekeepers",
+                "key": "return_reason",
+                "value": "missed_vierth"
+              },
+              "world_flag": "iven_told_gate_missed_vierth",
+              "next": "missed_oren"
+            },
+            {
+              "id": "nowhere_else",
+              "text": "I had nowhere else to go.",
+              "memory": {
+                "npc": "gatekeepers",
+                "key": "return_reason",
+                "value": "nowhere_else"
+              },
+              "world_flag": "iven_told_gate_nowhere_else",
+              "next": "nowhere_mira"
+            },
+            {
+              "id": "unfinished_business",
+              "text": "I had something to settle.",
+              "memory": {
+                "npc": "gatekeepers",
+                "key": "return_reason",
+                "value": "unfinished_business"
+              },
+              "world_flag": "iven_told_gate_unfinished_business",
+              "next": "business_oren"
+            }
+          ]
+        },
+        "missed_oren": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "Then remember it as it was. The town may ask you to prove that memory.",
+          "next": "missed_mira"
+        },
+        "missed_mira": {
+          "speaker": "Mira",
+          "portrait": "res://assets/ui/portraits/mira.svg",
+          "text": "Or you could simply let him through before the gate starts giving advice too.",
+          "next": ""
+        },
+        "nowhere_mira": {
+          "speaker": "Mira",
+          "portrait": "res://assets/ui/portraits/mira.svg",
+          "text": "Vierth is still allowed to be home, even when it is the last place left.",
+          "next": "nowhere_oren"
+        },
+        "nowhere_oren": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "Provided the town agrees it has room for all the versions of you.",
+          "next": ""
+        },
+        "business_oren": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "At the Ash Well?",
+          "next": "business_mira"
+        },
+        "business_mira": {
+          "speaker": "Mira",
+          "portrait": "res://assets/ui/portraits/mira.svg",
+          "text": "Oren. If he wanted the whole gate to know, he would have brought a bell.",
+          "next": ""
+        }
+      }
+    },
+    {
+      "conditions": {},
+      "start": "oren_road",
+      "nodes": {
+        "oren_road": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "You took the southern road? It hasn't held steady since dawn.",
+          "next": "mira_welcome"
+        },
+        "mira_welcome": {
+          "speaker": "Mira",
+          "portrait": "res://assets/ui/portraits/mira.svg",
+          "text": "Leave the courier alone, Oren. He looks like the road already questioned him.",
+          "next": "return_question"
+        },
+        "return_question": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "Three years away. Why come back now?",
+          "choices": [
+            {
+              "id": "missed_vierth",
+              "text": "I missed Vierth.",
+              "memory": {
+                "npc": "gatekeepers",
+                "key": "return_reason",
+                "value": "missed_vierth"
+              },
+              "world_flag": "iven_told_gate_missed_vierth",
+              "next": "missed_oren"
+            },
+            {
+              "id": "nowhere_else",
+              "text": "I had nowhere else to go.",
+              "memory": {
+                "npc": "gatekeepers",
+                "key": "return_reason",
+                "value": "nowhere_else"
+              },
+              "world_flag": "iven_told_gate_nowhere_else",
+              "next": "nowhere_mira"
+            },
+            {
+              "id": "unfinished_business",
+              "text": "I had something to settle.",
+              "memory": {
+                "npc": "gatekeepers",
+                "key": "return_reason",
+                "value": "unfinished_business"
+              },
+              "world_flag": "iven_told_gate_unfinished_business",
+              "next": "business_oren"
+            }
+          ]
+        },
+        "missed_oren": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "Then hold on to the Vierth you missed. This one has been forgetting itself.",
+          "next": "missed_mira"
+        },
+        "missed_mira": {
+          "speaker": "Mira",
+          "portrait": "res://assets/ui/portraits/mira.svg",
+          "text": "Welcome home, Iven. Even if the town takes a moment to remember you.",
+          "next": ""
+        },
+        "nowhere_mira": {
+          "speaker": "Mira",
+          "portrait": "res://assets/ui/portraits/mira.svg",
+          "text": "Then you chose well enough. A last refuge can still become a home.",
+          "next": "nowhere_oren"
+        },
+        "nowhere_oren": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "Assuming the southern road stays where you left it.",
+          "next": ""
+        },
+        "business_oren": {
+          "speaker": "Oren",
+          "portrait": "res://assets/ui/portraits/oren.svg",
+          "text": "People who say that usually mean the Well.",
+          "next": "business_mira"
+        },
+        "business_mira": {
+          "speaker": "Mira",
+          "portrait": "res://assets/ui/portraits/mira.svg",
+          "text": "You do not owe the gate your reasons. But whatever waits inside already knows you are here.",
+          "next": ""
+        }
+      }
+    }
+  ]
+}
